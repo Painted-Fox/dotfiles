@@ -1,0 +1,11 @@
+[
+  // Trying to break my habit of using the arrow keys to navigate.
+  { "keys": ["right"], "command": "null"},
+  { "keys": ["left"], "command": "null"},
+  { "keys": ["up"], "command": "null"},
+  { "keys": ["down"], "command": "null"},
+  { "keys": ["ctrl+alt+r"],
+    "command":"pandoc_render",
+    "args":{"target":"html"},
+    "context":[{"key": "selector", "operator": "equal", "operand": "text.html.markdown" }]}
+]

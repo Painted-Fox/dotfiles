@@ -1,0 +1,34 @@
+{
+  // Solarized is easy on the eyes.
+  "color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+
+  // Default to UTF-8
+  "fallback_encoding": "UTF-8",
+
+  // Font setup.  I find consolas at 11pt is pretty readable.
+  "font_face": "consolas",
+  "font_size": 11,
+
+  // 100 char wide. This fits half my screen at this font.
+  "rulers": [ 80 ],
+
+  // I like two space tabs.
+  // For syntaxes like Python and Markdown, I switch it back to 4 spaces.
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+
+  // Auto complete and tab completion just get in the way.
+  "auto_complete": false,
+  "tab_completion": false,
+
+  // Enforce some consistency.
+  "ensure_newline_at_eof_on_save": false,
+  //"trim_trailing_white_space_on_save": true,
+
+  // Make whitespace visible.
+  "draw_white_space": "all",
+
+  // Turn on vim-like behavior.
+  "ignored_packages": [],
+  "vintage_start_in_command_mode": true
+}

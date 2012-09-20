@@ -1,0 +1,52 @@
+[ui]
+username = Ryan Seto <mr.werewolf@gmail.com>
+
+[hostfingerprints]
+code.mrwerewolf.com=39:FA:A7:75:76:5A:69:73:08:5D:E3:BA:08:05:D9:70:08:4A:64:2A
+
+[extensions]
+hgext.bookmarks =
+hgext.color =
+hgext.fetch =
+hgext.graphlog =
+hgext.mercurial_keyring =
+hgext.mq =
+hgext.pager =
+hgext.progress =
+hgext.projrc =
+hgext.purge =
+hgext.rebase =
+hgext.record =
+hgext.share =
+
+# Hg-Git (https://bitbucket.org/durin42/hg-git)
+hggit = %USERPROFILE%\mercurial-extensions\hg-git\hggit
+
+# Mercurial Machina (https://bitbucket.org/MrWerewolf/mercurial-machina/wiki/Home)
+machina = %USERPROFILE%\mercurial-extensions\machina
+
+# Mercurial remote sync (https://bitbucket.org/MrWerewolf/hg-rsync)
+rsync = %USERPROFILE%\mercurial-extensions\rsync\hg-rsync.py
+
+# Remote update (https://bitbucket.org/MrWerewolf/rupdate/wiki/Home)
+rupdate = %USERPROFILE%\mercurial-extensions\rupdate
+
+[smtp]
+host = mail.photobooks.com
+
+[diff]
+git = True
+
+[pager]
+pager = more
+ignore = version, help, update, serve, record
+
+[tortoisehg]
+editor = "C:\Program Files\Sublime Text 2\sublime_text.exe" [$FILE:$LINENUM]
+shell = "C:\tools\Console2\Console.exe" -w "%(reponame)s" -d .
+fontcomment = Consolas,10,-1,5,50,0,0,0,0,0
+fontdiff = Consolas,10,-1,5,50,0,0,0,0,0
+fontlist = Verdana,9,-1,5,50,0,0,0,0,0
+fontlog = Consolas,10,-1,5,50,0,0,0,0,0
+fontoutputlog = Verdana,8,-1,5,50,0,0,0,0,0
+tabwidth = 4
