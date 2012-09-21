@@ -6,6 +6,16 @@
 
 $dir = Resolve-Path "$MyInvocation.MyCommand.Path\.."
 
+# Don't run if we're not running with Administrator privileges.
+If (-NOT ([Security.Principal.WindowsPrincipal] `
+  [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(`
+    [Security.Principal.WindowsBuiltInRole] "Administrator"))
+{
+  Write-Warning ("You do not have Administrator rights to run this script!" + `
+    "`nPlease re-run this script as an Administrator!")
+  Break
+}
+
 # Creates a symbolic link
 Function SymLink($link, $target, [bool] $directory=$False)
 {
