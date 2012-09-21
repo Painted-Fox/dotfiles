@@ -22,8 +22,8 @@
   "tab_completion": false,
 
   // Enforce some consistency.
-  "ensure_newline_at_eof_on_save": false,
-  //"trim_trailing_white_space_on_save": true,
+  "ensure_newline_at_eof_on_save": true,
+  "trim_trailing_white_space_on_save": true,
 
   // Make whitespace visible.
   "draw_white_space": "all",
