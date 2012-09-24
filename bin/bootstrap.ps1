@@ -12,27 +12,28 @@ Function Get-ScriptDirectory
 }
 
 $dir = Get-ScriptDirectory
+$root = Resolve-Path "$dir\.."
 
 # Import SymLink library
-. "$dir\lib\PowerShell\SymLink.ps1"
+. "$root\lib\PowerShell\SymLink.ps1"
 
 echo "Linking: PowerShell Profile"
 SymLink $profile $dir\Microsoft.PowerShell_profile.ps1
 
 echo "Linking: Vim Config"
-SymLink $env:userprofile\.vimrc $dir\.vimrc
-SymDirLink $env:userprofile\vimfiles $dir\.vim
+SymLink $env:userprofile\.vimrc $root\.vimrc
+SymDirLink $env:userprofile\vimfiles $root\.vim
 
 echo "Linking: Mercurial Config"
-SymLink $env:UserProfile\mercurial.ini $dir\hgrc
+SymLink $env:UserProfile\mercurial.ini $root\hgrc
 
 echo "Linking: Ruby Gems Config"
-SymLink $env:UserProfile\.gemrc $dir\.gemrc
+SymLink $env:UserProfile\.gemrc $root\.gemrc
 
 echo "Linking: Sublime Text 2 Config"
 MultiSymLink `
   "$env:UserProfile\AppData\Roaming\Sublime Text 2\Packages\User" `
-  "$dir\Sublime Text 2"
+  "$root\Sublime Text 2"
 
 echo "Linking: ConEmu Config"
-SymLink "C:\Program Files\ConEmu\ConEmu.xml" $dir\ConEmu.xml
+SymLink "C:\Program Files\ConEmu\ConEmu.xml" $root\ConEmu.xml
