@@ -11,10 +11,12 @@ Function Get-ScriptDirectory
   Split-Path $Invocation.MyCommand.Path
 }
 
+# Script dir.
 $dir = Get-ScriptDirectory
+# dotfiles dir
 $root = Resolve-Path "$dir\.."
 
-# Import SymLink library
+# Import Libraries
 . "$root\lib\PowerShell\SymLink.ps1"
 
 echo "Linking: PowerShell Profile"
@@ -30,10 +32,8 @@ SymLink $env:UserProfile\mercurial.ini $root\hgrc
 echo "Linking: Ruby Gems Config"
 SymLink $env:UserProfile\.gemrc $root\.gemrc
 
-echo "Linking: Sublime Text 2 Config"
-MultiSymLink `
-  "$env:UserProfile\AppData\Roaming\Sublime Text 2\Packages\User" `
-  "$root\Sublime Text 2"
+# Setup SublimeText configuration.
+. "$dir\SublimeText.ps1"
 
 echo "Linking: ConEmu Config"
 SymLink "C:\Program Files\ConEmu\ConEmu.xml" $root\ConEmu.xml
