@@ -18,7 +18,7 @@ $root = Resolve-Path "$dir\.."
 . "$root\lib\PowerShell\SymLink.ps1"
 
 echo "Linking: PowerShell Profile"
-SymLink $profile $dir\Microsoft.PowerShell_profile.ps1
+SymLink $profile $root\Microsoft.PowerShell_profile.ps1
 
 echo "Linking: Vim Config"
 SymLink $env:userprofile\.vimrc $root\.vimrc
