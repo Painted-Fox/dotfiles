@@ -38,7 +38,7 @@ host = mail.photobooks.com
 git = True
 
 [pager]
-pager = more
+pager = less
 ignore = version, help, update, serve, record
 
 [tortoisehg]

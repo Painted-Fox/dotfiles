@@ -21,8 +21,8 @@ $userHome = $env:UserProfile
 # Import Libraries
 . "$root\lib\PowerShell\SymLink.ps1"
 
-echo "Linking: PowerShell Profile"
-SymLink $profile $root\Microsoft.PowerShell_profile.ps1
+# Setup PowerShell
+. "$dir\PowerShell.ps1"
 
 echo "Linking: Vim Config"
 SymLink $userHome\.vimrc $root\vimrc
