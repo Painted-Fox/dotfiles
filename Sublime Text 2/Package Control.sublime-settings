@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1348662511,
+	"auto_upgrade_last_run": 1348711898,
 	"installed_packages":
 	[
 		"ERB Insert and Toggle Commands",
@@ -8,6 +8,7 @@
 		"PowerShell",
 		"RubyTest",
 		"Sass",
+		"SmartMarkdown",
 		"Tag"
 	]
 }
