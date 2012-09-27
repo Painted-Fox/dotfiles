@@ -23,14 +23,14 @@ echo "Linking: PowerShell Profile"
 SymLink $profile $root\Microsoft.PowerShell_profile.ps1
 
 echo "Linking: Vim Config"
-SymLink $env:userprofile\.vimrc $root\.vimrc
-SymDirLink $env:userprofile\vimfiles $root\.vim
+SymLink $env:userprofile\.vimrc $root\vimrc
+SymDirLink $env:userprofile\vimfiles $root\vim
 
 echo "Linking: Mercurial Config"
 SymLink $env:UserProfile\mercurial.ini $root\hgrc
 
 echo "Linking: Ruby Gems Config"
-SymLink $env:UserProfile\.gemrc $root\.gemrc
+SymLink $env:UserProfile\.gemrc $root\gemrc
 
 # Setup SublimeText configuration.
 . "$dir\SublimeText.ps1"
