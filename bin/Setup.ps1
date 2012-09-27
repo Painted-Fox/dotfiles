@@ -23,8 +23,8 @@ echo "Linking: PowerShell Profile"
 SymLink $profile $root\Microsoft.PowerShell_profile.ps1
 
 echo "Linking: Vim Config"
-SymLink $env:userprofile\.vimrc $root\vimrc
-SymDirLink $env:userprofile\vimfiles $root\vim
+SymLink $env:UserProfile\.vimrc $root\vimrc
+SymDirLink $env:UserProfile\vimfiles $root\vim
 
 echo "Linking: Mercurial Config"
 SymLink $env:UserProfile\mercurial.ini $root\hgrc
@@ -37,3 +37,6 @@ SymLink $env:UserProfile\.gemrc $root\gemrc
 
 echo "Linking: ConEmu Config"
 SymLink "C:\Program Files\ConEmu\ConEmu.xml" $root\ConEmu.xml
+
+echo "Linking: Mercurial Extensions"
+SymDirLink $env:UserProfile\.hgext $root\hgext
