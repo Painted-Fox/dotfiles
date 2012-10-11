@@ -6,6 +6,11 @@ filetype plugin indent on
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show unicode glyphs
+set t_Co=256       " Explicitly tell Vim that the terminal supports 256 colors
+
+" Powerline settings
+let g:Powerline_symbols = 'fancy'  " Custom icons and arrows.
+
 
 " Show line numbers
 set number
@@ -19,7 +24,6 @@ if has("gui_running")
   if has("gui_gtk2")
     set guifont=Inconsolata\ 12
   elseif has("gui_win32")
-    set guifont=Consolas:h11
-    set guifontwide=MingLiU:h11 "For windows to display mixed character sets
+    set guifont=Consolas_for_Powerline_FixedD:h11:cANSI
   endif
 endif

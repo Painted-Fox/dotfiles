@@ -6,7 +6,7 @@
   "fallback_encoding": "UTF-8",
 
   // Font setup.  I find consolas at 11pt is pretty readable.
-  "font_face": "consolas",
+  "font_face": "Consolas for Powerline FixedD",
   "font_size": 11,
 
   // 100 char wide. This fits half my screen at this font.
