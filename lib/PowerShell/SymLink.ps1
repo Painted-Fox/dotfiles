@@ -11,30 +11,42 @@ If (-NOT ([Security.Principal.WindowsPrincipal] `
 }
 
 # Creates a symbolic link
-Function SymLink($link, $target, [bool] $directory=$False)
+Function SymLink
 {
+  param (
+    [switch] $dir,
+    [Parameter(Mandatory = $True)]
+    [string] $target,
+    [Parameter(Mandatory = $True)]
+    [string] $link
+  )
+
   $linkDir = Split-Path $link -parent
   if (!(Test-Path $linkDir)) {
     echo "Making directory: $linkDir"
     md -Path $linkDir
   }
 
-  if (Test-Path $link) { rm $link }
-
-  if ($directory) { cmd /c mklink /D $link $target }
-  else { cmd /c mklink $link $target }
-}
-
-# Creates a directory symbolic link
-Function SymDirLink($link, $target)
-{
-  Remove-SymDirLink($link)
-  SymLink $link $target $True
+  if ($dir) {
+    Remove-SymDirLink($link)
+    cmd /c mklink /D $link $target
+  }
+  else {
+    if (Test-Path $link) { rm $link }
+    cmd /c mklink $link $target
+  }
 }
 
 # Links multiple files in a directory.
-Function MultiSymLink($linkDir, $targetDir)
+Function MultiSymLink
 {
+  param (
+    [Parameter(Mandatory = $True)]
+    [string] $targetDir,
+    [Parameter(Mandatory = $True)]
+    [string] $linkDir
+  )
+
   $targets = Get-ChildItem $targetDir
   ForEach ($target in $targets)
   {
@@ -47,10 +59,15 @@ Function MultiSymLink($linkDir, $targetDir)
 
 # Removes a Symbolic Directory Link
 # http://serverfault.com/questions/67770
-Function Remove-SymDirLink($directoryLink)
+Function Remove-SymDirLink
 {
-  if (Test-Path -Path $directoryLink -PathType Container) {
-    cmd /c rmdir $directoryLink
+  param (
+    [Parameter(Mandatory = $True)]
+    [string] $linkDir
+  )
+
+  if (Test-Path -Path $linkDir -PathType Container) {
+    cmd /c rmdir $linkDir
   }
 }
 

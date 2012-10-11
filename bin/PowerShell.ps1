@@ -8,15 +8,15 @@ Function Get-ScriptDirectory
 # Script dir.
 $dir = Get-ScriptDirectory
 # dotfiles dir
-$root = Resolve-Path "$dir\.."
+$dot = Resolve-Path "$dir\.."
 # Shortcut to the User's home folder
 $userHome = $env:UserProfile
 
 # Import Libraries
-. "$root\lib\PowerShell\SymLink.ps1"
+. "$dot\lib\PowerShell\SymLink.ps1"
 
 echo "Linking: PowerShell Profile"
-SymLink $profile $root\Microsoft.PowerShell_profile.ps1
+SymLink $dot\Microsoft.PowerShell_profile.ps1 $profile
 
 if ($psVersionTable.PsVersion.Major -lt 3)
 {

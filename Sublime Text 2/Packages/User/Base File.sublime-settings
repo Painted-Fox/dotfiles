@@ -1,0 +1,12 @@
+{
+	"ensure_newline_at_eof_on_save": false,
+	"fallback_encoding": "UTF-8",
+	"font_face": "consolas",
+	"font_size": 10,
+	"rulers":
+	[
+		80
+	],
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}

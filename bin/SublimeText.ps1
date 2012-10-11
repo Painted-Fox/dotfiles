@@ -10,11 +10,11 @@ Function Get-ScriptDirectory
 # Script dir.
 $dir = Get-ScriptDirectory
 # dotfiles dir
-$root = Resolve-Path "$dir\.."
+$dot = Resolve-Path "$dir\.."
 
 # Import Libraries
-. "$root\lib\PowerShell\SymLink.ps1"
-. "$root\lib\PowerShell\VersionControl.ps1"
+. "$dot\lib\PowerShell\SymLink.ps1"
+. "$dot\lib\PowerShell\VersionControl.ps1"
 
 # Sublime packages dir.
 $packages = "$env:UserProfile\AppData\Roaming\Sublime Text 2\Packages"
@@ -26,7 +26,7 @@ if (Test-Path $packages) {
   GitClone "git://github.com/SublimeText/$projName.git" "$packages\$projName"
 
   echo "Linking: Sublime Text 2 User Config"
-  MultiSymLink "$packages\User" "$root\Sublime Text 2"
+  SymLink -dir "$dot\Sublime Text 2\Packages\User" "$packages\User"
 } else {
   echo "WARNING: Sublime Text 2 is not installed."
   echo "         No dotfiles were setup for Sublime Text 2."

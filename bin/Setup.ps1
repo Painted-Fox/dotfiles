@@ -14,34 +14,34 @@ Function Get-ScriptDirectory
 # Script dir.
 $dir = Get-ScriptDirectory
 # dotfiles dir
-$root = Resolve-Path "$dir\.."
+$dot = Resolve-Path "$dir\.."
 # Shortcut to the User's home folder
 $userHome = $env:UserProfile
 
 # Import Libraries
-. "$root\lib\PowerShell\SymLink.ps1"
+. "$dot\lib\PowerShell\SymLink.ps1"
 
 # Setup PowerShell
 . "$dir\PowerShell.ps1"
 
 echo "Linking: Vim Config"
-SymLink $userHome\.vimrc $root\vimrc
-SymDirLink $userHome\vimfiles $root\vim
+SymLink      $dot\vim\vimrc  $userHome\.vimrc
+SymLink -dir $dot\vim        $userHome\vimfiles
 
 echo "Linking: Mercurial Config"
-SymLink $userHome\mercurial.ini $root\hgrc
+SymLink      $dot\hgrc       $userHome\mercurial.ini
 
 echo "Linking: Ruby Gems Config"
-SymLink $userHome\.gemrc $root\gemrc
+SymLink      $dot\gemrc      $userHome\.gemrc
 
 # Setup SublimeText configuration.
 . "$dir\SublimeText.ps1"
 
 echo "Linking: ConEmu Config"
-SymLink "C:\Program Files\ConEmu\ConEmu.xml" $root\ConEmu.xml
+SymLink      $dot\ConEmu.xml "C:\Program Files\ConEmu\ConEmu.xml"
 
 echo "Linking: Mercurial Extensions"
-SymDirLink $userHome\.hgext $root\hgext
+SymLink -dir $dot\hgext      $userHome\.hgext
 
 echo "Linking: kdiff3 Config"
-SymLink $userHome\.kdiff3rc $root\kdiff3rc
+SymLink      $dot\kdiff3rc   $userHome\.kdiff3rc
