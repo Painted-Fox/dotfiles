@@ -21,6 +21,16 @@ $userHome = $env:UserProfile
 # Import Libraries
 . "$dot\lib\PowerShell\SymLink.ps1"
 
+# Setup Curl.  Depends on msysgit being installed.
+# http://vim.spf13.com/#install
+$gitCmdDirs = Join-Path $env:ProgramFiles,${Env:ProgramFiles(x86)} "Git\cmd"
+foreach ($gitCmdDir in $gitCmdDirs) {
+  if (Test-Path $gitCmdDir) {
+    echo "Setup: Curl command"
+    Copy-Item "$dot\tools\curl.cmd" "$gitCmdDir"
+  }
+}
+
 # Setup PowerShell
 . "$dir\PowerShell.ps1"
 
