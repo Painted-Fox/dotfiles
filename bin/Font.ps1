@@ -89,7 +89,7 @@ if (!(Has-Font $dejaVuFiles))
   Extract-Archive "$dot\tmp\$fontName.tar.bz2" "$dot\tmp"
   Extract-Archive "$dot\tmp\$fontName.tar" "$dot\tmp\$fontName"
   Remove-Item "$dot\tmp\$fontName\*" -exclude *.ttf
-  & "$dot\lib\PowerShell\Add-Font.ps1" -path "$dot\tmp\$fontName"
+  . "$dot\lib\PowerShell\Add-Font.ps1" -path "$dot\tmp\$fontName"
   Remove-Temp
 }
 
@@ -103,7 +103,7 @@ if (!(Has-Font $dejaVuSansMonoPowerlineFiles))
   Extract-Archive "$dot\tmp\$fontName.tar.gz" "$dot\tmp"
   Extract-Archive "$dot\tmp\$fontName.tar" "$dot\tmp\$fontName"
   Remove-Item "$dot\tmp\$fontName\*" -exclude *.ttf
-  & "$dot\lib\PowerShell\Add-Font.ps1" -path "$dot\tmp\$fontName"
+  . "$dot\lib\PowerShell\Add-Font.ps1" -path "$dot\tmp\$fontName"
   Remove-Temp
 }
 
@@ -116,6 +116,6 @@ if (!(Has-Font $consolasPowerlineFiles))
     "https://github.com/eugeneching/consolasPowerlineVim/zipball/master"
   Extract-Archive "$dot\tmp\$fontName.zip" "$dot\tmp\$fontName"
   Remove-Item "$dot\tmp\$fontName\*" -exclude *.ttf
-  & "$dot\lib\PowerShell\Add-Font.ps1" -path "$dot\tmp\$fontName"
+  . "$dot\lib\PowerShell\Add-Font.ps1" -path "$dot\tmp\$fontName"
   Remove-Temp
 }
