@@ -81,8 +81,16 @@ Function Remove-Temp
 
 if (!(Has-Font $dejaVuFiles))
 {
-  Write-Host "No DejaVu Fonts"
+  Write-Host "Installing DejaVu Fonts"
   Create-Temp
+  $fontName = "dejavu-fonts-ttf-2.33"
+  curl -L -o "$dot\tmp\$fontName.tar.bz2" `
+    "http://sourceforge.net/projects/dejavu/files/dejavu/2.33/dejavu-fonts-ttf-2.33.tar.bz2"
+  Extract-Archive "$dot\tmp\$fontName.tar.bz2" "$dot\tmp"
+  Extract-Archive "$dot\tmp\$fontName.tar" "$dot\tmp\$fontName"
+  Remove-Item "$dot\tmp\$fontName\*" -exclude *.ttf
+  & "$dot\lib\PowerShell\Add-Font.ps1" -path "$dot\tmp\$fontName"
+  Remove-Temp
 }
 
 if (!(Has-Font $dejaVuSansMonoPowerlineFiles))
@@ -90,7 +98,8 @@ if (!(Has-Font $dejaVuSansMonoPowerlineFiles))
   Write-Host "Installing DejaVu Sans Mono for Powerline Fonts"
   Create-Temp
   $fontName = "dejaVuSansMonoPowerline"
-  curl -o "$dot\tmp\$fontName.tar.gz" "https://gist.github.com/gists/1630581/download"
+  curl -o "$dot\tmp\$fontName.tar.gz" `
+    "https://gist.github.com/gists/1630581/download"
   Extract-Archive "$dot\tmp\$fontName.tar.gz" "$dot\tmp"
   Extract-Archive "$dot\tmp\$fontName.tar" "$dot\tmp\$fontName"
   Remove-Item "$dot\tmp\$fontName\*" -exclude *.ttf
@@ -100,6 +109,13 @@ if (!(Has-Font $dejaVuSansMonoPowerlineFiles))
 
 if (!(Has-Font $consolasPowerlineFiles))
 {
-  Write-Host "No consolas powerline"
+  Write-Host "Installing Consolas for Powerline"
   Create-Temp
+  $fontName = "consolasPowerline"
+  curl -L -o "$dot\tmp\$fontName.zip" `
+    "https://github.com/eugeneching/consolasPowerlineVim/zipball/master"
+  Extract-Archive "$dot\tmp\$fontName.zip" "$dot\tmp\$fontName"
+  Remove-Item "$dot\tmp\$fontName\*" -exclude *.ttf
+  & "$dot\lib\PowerShell\Add-Font.ps1" -path "$dot\tmp\$fontName"
+  Remove-Temp
 }

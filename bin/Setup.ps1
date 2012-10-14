@@ -34,6 +34,9 @@ foreach ($gitCmdDir in $gitCmdDirs) {
 # Setup PowerShell
 . "$dir\PowerShell.ps1"
 
+# Install fonts
+. "$dir\Font.ps1"
+
 echo "Linking: Vim Config"
 SymLink      $dot\vim\vimrc  $userHome\.vimrc
 SymLink -dir $dot\vim        $userHome\vimfiles
