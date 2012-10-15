@@ -20,7 +20,7 @@ SymLink $dot\Microsoft.PowerShell_profile.ps1 $profile
 
 if ($psVersionTable.PsVersion.Major -lt 3)
 {
-  echo ("WARNING: You are using PowerShell " +
+  Write-Warning ("You are using PowerShell " +
     "$($psVersionTable.PsVersion.Major).$($psVersionTable.PsVersion.Minor)")
   echo "         It's recommended you upgrade to PowerShell 3.0 from here:"
   echo "         http://www.microsoft.com/en-us/download/details.aspx?id=34595"
@@ -28,7 +28,7 @@ if ($psVersionTable.PsVersion.Major -lt 3)
 
 if (!(Get-Module -ListAvailable | where { $_.Name -eq "Pscx" }))
 {
-  echo "WARNING: You do not have PowerShell Community Extensions (Pscx)."
+  Write-Warning "You do not have PowerShell Community Extensions (Pscx)."
   echo "         It's recommended that you download and install Pscx from here:"
   echo "         http://pscx.codeplex.com/"
 }
