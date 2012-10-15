@@ -91,6 +91,12 @@ if (!(Has-Font $dejaVuFiles))
   Remove-Item "$dot\tmp\$fontName\*" -exclude *.ttf
   . "$dot\lib\PowerShell\Add-Font.ps1" -path "$dot\tmp\$fontName"
   Remove-Temp
+
+  if (!(Has-Font $dejaVuFiles))
+  {
+    Write-Warning "Failed to install DejaVu Fonts"
+    Break
+  }
 }
 
 if (!(Has-Font $dejaVuSansMonoPowerlineFiles))
@@ -105,6 +111,12 @@ if (!(Has-Font $dejaVuSansMonoPowerlineFiles))
   Remove-Item "$dot\tmp\$fontName\*" -exclude *.ttf
   . "$dot\lib\PowerShell\Add-Font.ps1" -path "$dot\tmp\$fontName"
   Remove-Temp
+
+  if (!(Has-Font $dejaVuSansMonoPowerlineFiles))
+  {
+    Write-Warning "Failed to install DejaVu Sans Mono for Powerline Fonts"
+    Break
+  }
 }
 
 if (!(Has-Font $consolasPowerlineFiles))
@@ -118,4 +130,10 @@ if (!(Has-Font $consolasPowerlineFiles))
   Remove-Item "$dot\tmp\$fontName\*" -exclude *.ttf
   . "$dot\lib\PowerShell\Add-Font.ps1" -path "$dot\tmp\$fontName"
   Remove-Temp
+
+  if (!(Has-Font $consolasPowerlineFiles))
+  {
+    Write-Warning "Failed to install Consolas for Powerline"
+    Break
+  }
 }
