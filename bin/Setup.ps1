@@ -37,9 +37,16 @@ foreach ($gitCmdDir in $gitCmdDirs) {
 # Install fonts
 . "$dir\Font.ps1"
 
-echo "Linking: Vim Config"
-SymLink      $dot\vim\vimrc  $userHome\.vimrc
-SymLink -dir $dot\vim        $userHome\vimfiles
+echo "Installing: Vim Configuration"
+SymLink      $dot\vim\vimrc          $userHome\.vimrc
+SymLink      $dot\vim\vimrc.bundles  $userHome\.vimrc.bundles
+SymLink -dir $dot\vim                $userHome\.vim
+
+if ((Get-CHildItem "$dot\vim\bundle").Count -le 2)
+{
+  Write-Host "Installing: Vim Bundles"
+  vim -u "$dot/vim/vimrc.bundles" - +BundleInstall! +BundleClean +qall
+}
 
 echo "Linking: Mercurial Config"
 SymLink      $dot\hgrc       $userHome\mercurial.ini
