@@ -48,17 +48,17 @@ if ((Get-CHildItem "$dot\vim\bundle").Count -le 2)
   vim -u "$dot/vim/vimrc.bundles" - +BundleInstall! +BundleClean +qall
 }
 
-echo "Linking: Mercurial Config"
-SymLink      $dot\hgrc       $userHome\mercurial.ini
+# Setup SublimeText configuration.
+. "$dir\SublimeText.ps1"
 
 echo "Linking: Ruby Gems Config"
 SymLink      $dot\gemrc      $userHome\.gemrc
 
-# Setup SublimeText configuration.
-. "$dir\SublimeText.ps1"
-
 echo "Linking: ConEmu Config"
 SymLink      $dot\ConEmu.xml "C:\Program Files\ConEmu\ConEmu.xml"
+
+echo "Linking: Mercurial Config"
+SymLink      $dot\hgrc       $userHome\mercurial.ini
 
 echo "Linking: Mercurial Extensions"
 SymLink -dir $dot\hgext      $userHome\.hgext

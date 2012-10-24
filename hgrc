@@ -44,7 +44,7 @@ ignore = version, help, update, serve, record
 
 [tortoisehg]
 editor = "C:\Program Files\Sublime Text 2\sublime_text.exe" [$FILE:$LINENUM]
-shell = "C:\tools\Console2\Console.exe" -w "%(reponame)s" -d .
+shell = "C:\Program Files\ConEmu\ConEmu64.exe" /dir "%(reponame)s" /cmd powershell
 fontcomment = Consolas,10,-1,5,50,0,0,0,0,0
 fontdiff = Consolas,10,-1,5,50,0,0,0,0,0
 fontlist = Verdana,9,-1,5,50,0,0,0,0,0
@@ -52,3 +52,5 @@ fontlog = Consolas,10,-1,5,50,0,0,0,0,0
 fontoutputlog = Verdana,8,-1,5,50,0,0,0,0,0
 tabwidth = 4
 vdiff = beyondcompare3
+forcerepotab = True
+workbench.single = True
