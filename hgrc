@@ -1,6 +1,5 @@
 [ui]
 username = Ryan Seto <mr.werewolf@gmail.com>
-merge = beyondcompare3
 
 [hostfingerprints]
 code.mrwerewolf.com=39:FA:A7:75:76:5A:69:73:08:5D:E3:BA:08:05:D9:70:08:4A:64:2A
@@ -51,6 +50,5 @@ fontlist = Verdana,9,-1,5,50,0,0,0,0,0
 fontlog = Consolas,10,-1,5,50,0,0,0,0,0
 fontoutputlog = Verdana,8,-1,5,50,0,0,0,0,0
 tabwidth = 4
-vdiff = beyondcompare3
 forcerepotab = True
 workbench.single = True
