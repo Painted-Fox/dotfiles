@@ -1,7 +1,11 @@
 # Provides functions for using 7zip.
 
 # Find the command line version of 7zip
-$7z = Join-Path $env:ProgramFiles,${Env:ProgramFiles(x86)} "7-Zip\7z.exe"
+$7z = @(Join-Path $env:ProgramFiles "7-Zip\7z.exe")
+if (${Env:ProgramFiles(x86)}) {
+  $gitCmdDirs += Join-Path ${Env:ProgramFiles(x86)} "7-Zip\7z.exe"
+}
+
 foreach ($cmd in $7z) {
   if (Test-Path $cmd)
   {

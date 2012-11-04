@@ -23,7 +23,11 @@ $userHome = $env:UserProfile
 
 # Setup Curl.  Depends on msysgit being installed.
 # http://vim.spf13.com/#install
-$gitCmdDirs = Join-Path $env:ProgramFiles,${Env:ProgramFiles(x86)} "Git\cmd"
+$gitCmdDirs = @(Join-Path $env:ProgramFiles "Git\cmd")
+if (${Env:ProgramFiles(x86)}) {
+  $gitCmdDirs += Join-Path ${Env:ProgramFiles(x86)} "Git\cmd"
+}
+
 foreach ($gitCmdDir in $gitCmdDirs) {
   if (Test-Path $gitCmdDir) {
     echo "Setup: Curl command"
