@@ -5,5 +5,7 @@ syntax: glob
 *.swp
 *~
 
+Package Control.last-run
+
 syntax: regexp
 ^vim/bundle/(?!vundle)
