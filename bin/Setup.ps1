@@ -69,3 +69,7 @@ SymLink -dir $dot\hgext      $userHome\.hgext
 
 echo "Linking: kdiff3 Config"
 SymLink      $dot\kdiff3rc   $userHome\.kdiff3rc
+
+Write-Host "Linking: PuTTY Tray Config"
+SymLink -dir $dot\PuTTY\sessions  $userHome\tools\PuTTY\AMD64\sessions
+SymLink -dir $dot\PuTTY\sessions  $userHome\tools\PuTTY\x86\sessions
