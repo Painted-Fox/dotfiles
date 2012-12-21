@@ -18,6 +18,7 @@ function dot_link {
   ln -sfn "$dot/$1" "$HOME/$2"
 }
 
+# Install Vim dotfiles.
 dot_link "vim"               ".vim"
 dot_link "vim/vimrc"         ".vimrc"
 dot_link "vim/vimrc.bundles" ".vimrc.bundles"
@@ -26,3 +27,7 @@ if [ $( ls -1 "$dot/vim/bundle/" | wc -l ) -le 1 ]; then
   echo "Installing: Vim Bundles"
   vim +BundleInstall! +BundleClean +qall
 fi
+
+dot_link "hgrc"              ".hgrc"
+dot_link "hgext"             ".hgext"
+dot_link "zshrc"             ".zshrc"

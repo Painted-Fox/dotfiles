@@ -20,16 +20,16 @@ hgext.record =
 hgext.share =
 
 # Hg-Git (https://bitbucket.org/durin42/hg-git)
-hggit = ~\.hgext\hg-git\hggit
+hggit = ~/.hgext/hg-git/hggit
 
 # Mercurial Machina (https://bitbucket.org/MrWerewolf/mercurial-machina/wiki/Home)
-machina = ~\.hgext\machina
+machina = ~/.hgext/machina
 
 # Mercurial remote sync (https://bitbucket.org/MrWerewolf/hg-rsync)
-rsync = ~\.hgext\rsync\hg-rsync.py
+rsync = ~/.hgext/rsync/hg-rsync.py
 
 # Remote update (https://bitbucket.org/MrWerewolf/rupdate/wiki/Home)
-rupdate = ~\.hgext\rupdate
+rupdate = ~/.hgext/rupdate
 
 [smtp]
 host = mail.photobooks.com
