@@ -9,15 +9,14 @@ hgext.bookmarks =
 hgext.color =
 hgext.fetch =
 hgext.graphlog =
-hgext.mercurial_keyring =
 hgext.mq =
 hgext.pager =
 hgext.progress =
-hgext.projrc =
 hgext.purge =
 hgext.rebase =
 hgext.record =
 hgext.share =
+mercurial_keyring =
 
 # Hg-Git (https://bitbucket.org/durin42/hg-git)
 hggit = ~/.hgext/hg-git/hggit
