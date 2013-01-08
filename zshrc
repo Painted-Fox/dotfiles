@@ -36,6 +36,10 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
+if [ -d "/usr/local/go/bin" ] ; then
+  PATH=$PATH:/usr/local/go/bin
+fi
+
 ### Solarized dircolors for ls --color=always
 eval `dircolors ~/dotfiles/dircolors-solarized/dircolors.256dark`
 
