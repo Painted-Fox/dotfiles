@@ -1,3 +1,3 @@
 set list!
-set listchars=listchars=trail:.,extends:#,nbsp:. " Don't hightlight tabs.
-set noexpandtab                   " don't convert tabs to spaces
+set listchars=trail:.,extends:#,nbsp:. " Don't hightlight tabs.
+set noexpandtab                        " Don't convert tabs to spaces.
