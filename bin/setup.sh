@@ -31,3 +31,5 @@ fi
 dot_link "hgrc"              ".hgrc"
 dot_link "hgext"             ".hgext"
 dot_link "zshrc"             ".zshrc"
+dot_link "zprofile"          ".zprofile"
+dot_link "mintty"            ".mintty"
