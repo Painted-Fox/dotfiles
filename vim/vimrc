@@ -134,6 +134,8 @@
     set list
     set listchars=tab:>-,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 
+    " Use the visualbell instead of beeping on error
+    set visualbell
 " }
 
 " Formatting {
