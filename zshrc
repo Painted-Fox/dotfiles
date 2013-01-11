@@ -50,3 +50,12 @@ alias l='ls -lA1h'
 alias ll='ls -lh'
 alias la='ls -lAh'
 
+if [ "$PS1" != "" -a "${STARTED_TMUX:-x}" = x -a "${SSH_TTY:-x}" != x ]
+then
+  tmux_session='wolf'
+  STARTED_TMUX=1; export STARTED_TMUX
+  sleep 1
+  ( (tmux has-session -t $tmux_session && tmux attach-session -t $tmux_session) || (tmux new-session -s $tmux_session) ) && exit 0
+
+  echo "tmux failed to start"
+fi
