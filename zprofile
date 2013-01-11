@@ -8,3 +8,4 @@ fi
 
 # Solarized Theme for mintty
 source ~/dotfiles/sol.dark
+
