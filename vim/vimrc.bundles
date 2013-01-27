@@ -64,7 +64,7 @@
             Bundle 'altercation/vim-colors-solarized'
             Bundle 'tpope/vim-surround'
             Bundle 'AutoClose'
-            Bundle 'Lokaltog/vim-powerline'
+            Bundle 'Lokaltog/powerline'
             Bundle 'jistr/vim-nerdtree-tabs'
             Bundle 'nathanaelkane/vim-indent-guides'
         endif
