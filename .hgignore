@@ -9,3 +9,4 @@ Package Control.last-run
 
 syntax: regexp
 ^vim/bundle/(?!vundle)
+^pentadactyl/info
