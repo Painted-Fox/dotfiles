@@ -21,6 +21,9 @@ mercurial_keyring =
 # Hg-Git (https://bitbucket.org/durin42/hg-git)
 hggit = ~/.hgext/hg-git/hggit
 
+# Hg-Review (http://sjl.bitbucket.org/hg-review/)
+review = ~/.hgext/hg-review/review
+
 # Mercurial Machina (https://bitbucket.org/MrWerewolf/mercurial-machina/wiki/Home)
 machina = ~/.hgext/machina
 
