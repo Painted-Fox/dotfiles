@@ -4,9 +4,12 @@ syntax: glob
 *.rej
 *.swp
 *~
+*.exe
 
 Package Control.last-run
 
 syntax: regexp
 ^vim/bundle/(?!vundle)
 ^pentadactyl/info
+(?i)SshHostKeys
+^KiTTY/Sessions
