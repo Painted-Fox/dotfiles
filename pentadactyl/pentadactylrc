@@ -19,4 +19,4 @@ nmap -builtin j 3j
 nmap -builtin k 3k
 
 " Flash Blocker whitelist
-set fbwhitelist=pandora.com,youtube.com,newgrounds.com
+set fbwhitelist=pandora.com,youtube.com,newgrounds.com,maps.google.com
