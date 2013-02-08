@@ -20,3 +20,7 @@ nmap -builtin k 3k
 
 " Flash Blocker whitelist
 set fbwhitelist=pandora.com,youtube.com,newgrounds.com,maps.google.com
+
+" Some sites already enable vim-like navigation.  Don't intercept these keys.
+set passkeys+=mail.google.com:jk<CR>,gi
+set passkeys+=www.google.com/reader:jk<CR>,v,gh,gs
