@@ -25,6 +25,7 @@ set fbwhitelist+=newgrounds.com
 set fbwhitelist+=maps.google.com
 set fbwhitelist+=plus.google.com
 set fbwhitelist+=facebook.com
+set fbwhitelist+=flickr.com
 
 " Some sites already enable vim-like navigation.  Don't intercept these keys.
 set passkeys+=mail.google.com:jk<CR>,gi
