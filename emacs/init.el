@@ -10,4 +10,11 @@
 (evil-mode 1)
 
 ;; Color theme
-(load-theme 'solarized-dark t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+;;(load-theme 'solarized-dark t)
+(load-theme 'zenburn t)
+
+
+;; Default font
+(custom-set-faces
+ '(default ((t (:family "Consolas for Powerline FixedD" :foundry "outline" :slant normal :weight normal :height 113 :width normal)))))
