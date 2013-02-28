@@ -73,3 +73,6 @@ SymLink      $dot\kdiff3rc   $userHome\.kdiff3rc
 Write-Host "Linking: Pentadactyl Firefox Addon"
 SymLink -dir $dot\pentadactyl               $userHome\pentadactyl
 SymLink      $dot\pentadactyl\pentadactylrc $userHome\_pentadactylrc
+
+Write-Host "Linking: Emacs Config"
+SymLink -dir $dot\emacs    $userHome\.emacs.d
