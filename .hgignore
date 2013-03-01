@@ -13,3 +13,4 @@ syntax: regexp
 ^pentadactyl/info
 (?i)SshHostKeys
 ^KiTTY/Sessions
+^emacs/elpa
