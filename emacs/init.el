@@ -10,6 +10,9 @@
 (custom-set-faces
  '(default ((t (:family "Consolas for Powerline FixedD" :foundry "outline" :slant normal :weight normal :height 113 :width normal)))))
 
+;; Default 80 columns wide
+(setq-default fill-column 80)
+
 ;; =============================================================================
 ;; Package Management
 ;; =============================================================================
