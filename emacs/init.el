@@ -34,6 +34,10 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
+;; =============================================================================
+;; Package Configuration
+;; =============================================================================
+
 ;; Load Evil
 (require 'evil)
 (evil-mode 1)
