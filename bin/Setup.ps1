@@ -76,3 +76,6 @@ SymLink      $dot\pentadactyl\pentadactylrc $userHome\_pentadactylrc
 
 Write-Host "Linking: Emacs Config"
 SymLink -dir $dot\emacs    $userHome\.emacs.d
+
+Write-Host "Setting HOME environment variable. (Emacs needs this.)"
+[Environment]::SetEnvironmentVariable("HOME", $userHome, "User")
