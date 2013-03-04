@@ -13,6 +13,12 @@
 ;; Default 80 columns wide
 (setq-default fill-column 80)
 
+;; Use aspell for spell check
+(add-to-list 'exec-path "C:/Program Files (x86)/Aspell/bin/")
+(custom-set-variables
+ '(ispell-dictionary "american")
+ '(ispell-program-name "aspell.exe"))
+
 ;; =============================================================================
 ;; Package Management
 ;; =============================================================================
