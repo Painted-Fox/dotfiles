@@ -13,6 +13,14 @@
 ;; Default 80 columns wide
 (setq-default fill-column 80)
 
+;; Show 82 columns to make room for the Fill Column Indicator
+(add-to-list 'default-frame-alist '(width . 82))
+
+;; Fill Column Indicator
+;; Use fci-mode for all files
+(add-hook 'after-change-major-mode-hook 'fci-mode)
+(setq fci-rule-color "#6f6f6f")
+
 ;; Use aspell for spell check
 (add-to-list 'exec-path "C:/Program Files (x86)/Aspell/bin/")
 (custom-set-variables
