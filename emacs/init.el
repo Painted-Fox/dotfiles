@@ -13,8 +13,8 @@
 ;; Default 80 columns wide
 (setq-default fill-column 80)
 
-;; Show 82 columns to make room for the Fill Column Indicator
-(add-to-list 'default-frame-alist '(width . 82))
+;; Show 81 columns to make room for the Fill Column Indicator
+(add-to-list 'default-frame-alist '(width . 81))
 
 ;; Fill Column Indicator
 ;; Use fci-mode for all files
