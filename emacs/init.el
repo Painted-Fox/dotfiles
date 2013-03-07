@@ -4,7 +4,7 @@
 (load-theme 'zenburn t)
 
 ;; UTF-8
-(prefer-coding-system 'utf-8)
+(prefer-coding-system 'utf-8-with-signature-unix)
 
 ;; Default font
 (custom-set-faces
