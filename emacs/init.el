@@ -16,11 +16,6 @@
 ;; Show 81 columns to make room for the Fill Column Indicator
 (add-to-list 'default-frame-alist '(width . 81))
 
-;; Fill Column Indicator
-;; Use fci-mode for all files
-(add-hook 'after-change-major-mode-hook 'fci-mode)
-(setq fci-rule-color "#6f6f6f")
-
 ;; Use aspell for spell check
 (add-to-list 'exec-path "C:/Program Files (x86)/Aspell/bin/")
 (custom-set-variables
@@ -44,7 +39,8 @@
   (package-refresh-contents))
 
 (defvar my-packages '(
-  evil)
+  evil
+  fill-column-indicator)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -58,3 +54,10 @@
 ;; Load Evil
 (require 'evil)
 (evil-mode 1)
+
+;; Fill Column Indicator
+;; Use fci-mode for all files
+(require 'fill-column-indicator)
+(add-hook 'after-change-major-mode-hook 'fci-mode)
+(setq fci-rule-color "#6f6f6f")
+
