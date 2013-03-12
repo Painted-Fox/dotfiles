@@ -40,6 +40,9 @@
  '(ispell-dictionary "american")
  '(ispell-program-name "aspell.exe"))
 
+;; Disable tabs until we need them.
+(setq-default indent-tabs-mode nil)
+
 ;; =============================================================================
 ;; Package Management
 ;; =============================================================================
