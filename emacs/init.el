@@ -16,9 +16,6 @@
 ;; Show 82 columns to make room for the Fill Column Indicator
 (add-to-list 'default-frame-alist '(width . 82))
 
-;; Default to 2 char wide tabs.
-(setq default-tab-width 2)
-
 ;; whitespace-mode
 ;; make whitespace-mode use just basic coloring
 (setq whitespace-style (
@@ -40,8 +37,16 @@
  '(ispell-dictionary "american")
  '(ispell-program-name "aspell.exe"))
 
+;; TAB Behavior!
+;; Default to 2 char wide tabs.
+(setq default-tab-width 2)
 ;; Disable tabs until we need them.
 (setq-default indent-tabs-mode nil)
+;; Tab stops
+(setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64
+                      68 72 76 80 84 88 92 96 100 104 108 112 116 120))
+;; Disable relative tabs in text-mode
+(define-key text-mode-map (kbd "TAB") 'tab-to-tab-stop);
 
 ;; =============================================================================
 ;; Package Management
