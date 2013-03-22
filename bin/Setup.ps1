@@ -44,6 +44,7 @@ foreach ($gitCmdDir in $gitCmdDirs) {
 echo "Installing: Vim Configuration"
 SymLink      $dot\vim\vimrc          $userHome\.vimrc
 SymLink      $dot\vim\vimrc.bundles  $userHome\.vimrc.bundles
+SymLink      $dot\vim\vsvimrc        $userHome\.vsvimrc
 SymLink -dir $dot\vim                $userHome\.vim
 
 if ((Get-CHildItem "$dot\vim\bundle").Count -le 2)
