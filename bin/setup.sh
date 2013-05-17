@@ -21,7 +21,7 @@ function dot_link {
 # Install Vim dotfiles.
 dot_link "vim"               ".vim"
 dot_link "vim/vimrc"         ".vimrc"
-dot_link "vim/vimrc.bundles" ".vimrc.bundles"
+dot_link "vim/gvimrc"        ".gvimrc"
 
 if [ $( ls -1 "$dot/vim/bundle/" | wc -l ) -le 1 ]; then
   echo "Installing: Vim Bundles"

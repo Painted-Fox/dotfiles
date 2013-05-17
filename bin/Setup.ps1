@@ -41,9 +41,9 @@ foreach ($gitCmdDir in $gitCmdDirs) {
 # Install fonts
 . "$dir\Font.ps1"
 
-echo "Installing: Vim Configuration"
+Write-Host "Installing: Vim Configuration"
 SymLink      $dot\vim\vimrc          $userHome\.vimrc
-SymLink      $dot\vim\vimrc.bundles  $userHome\.vimrc.bundles
+SymLink      $dot\vim\gvimrc         $userHome\.gvimrc
 SymLink      $dot\vim\vsvimrc        $userHome\.vsvimrc
 SymLink -dir $dot\vim                $userHome\.vim
 
