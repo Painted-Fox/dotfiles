@@ -1,5 +1,5 @@
 set background=dark
-colors molokai
+colors zenburn
 
 set guifont=Consolas:h11
 set columns=80 lines=50
