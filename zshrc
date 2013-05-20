@@ -40,6 +40,11 @@ if [ -d "/usr/local/go/bin" ] ; then
   PATH=$PATH:/usr/local/go/bin
 fi
 
+# Personal bin folder
+if [ -d "$HOME/bin" ] ; then
+  PATH=$PATH:$HOME/bin
+fi
+
 ### Solarized dircolors for ls --color=always
 eval `dircolors ~/dotfiles/dircolors-solarized/dircolors.256dark`
 
