@@ -19,19 +19,19 @@ hgext.share =
 mercurial_keyring =
 
 # Hg-Git (https://bitbucket.org/durin42/hg-git)
-hggit = ~/.hgext/hg-git/hggit
+hggit = ~/dotfiles/hgext/hg-git/hggit
 
 # Hg-Review (http://sjl.bitbucket.org/hg-review/)
-review = ~/.hgext/hg-review/review
+review = ~/dotfiles/hgext/hg-review/review
 
 # Mercurial Machina (https://bitbucket.org/MrWerewolf/mercurial-machina/wiki/Home)
-machina = ~/.hgext/machina
+machina = ~/dotfiles/hgext/machina
 
 # Mercurial remote sync (https://bitbucket.org/MrWerewolf/hg-rsync)
-rsync = ~/.hgext/rsync/hg-rsync.py
+rsync = ~/dotfiles/hgext/rsync/hg-rsync.py
 
 # Remote update (https://bitbucket.org/MrWerewolf/rupdate/wiki/Home)
-rupdate = ~/.hgext/rupdate
+rupdate = ~/dotfiles/hgext/rupdate
 
 [smtp]
 host = mail.photobooks.com
