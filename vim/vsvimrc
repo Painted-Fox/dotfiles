@@ -1,4 +1,4 @@
-set shiftwidth=2                " use indents of 2 spaces
-set tabstop=2                   " an indentation every four columns
-set softtabstop=2               " let backspace delete indent
-set noexpandtab                 " Don't convert tabs to spaces.
+set shiftwidth=4                " use indents of 2 spaces
+set tabstop=4                   " an indentation every four columns
+set softtabstop=4               " let backspace delete indent
+set expandtab                   " Convert tabs to spaces.
