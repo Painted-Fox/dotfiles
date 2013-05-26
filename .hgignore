@@ -9,7 +9,9 @@ syntax: glob
 Package Control.last-run
 
 syntax: regexp
-^vim/bundle/(?!vundle)
+^vim/bundle
+^hgext
+^dircolors-solarized
 ^pentadactyl/info
 (?i)SshHostKeys
 ^KiTTY/Sessions
