@@ -16,3 +16,4 @@ syntax: regexp
 (?i)SshHostKeys
 ^KiTTY/Sessions
 ^emacs/elpa
+^emacs/url/cookies$
