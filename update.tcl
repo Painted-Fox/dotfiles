@@ -43,7 +43,7 @@ proc pull {vcs dir} {
 
 # Clones the repository.
 proc clone {vcs url dest} {
-    puts [exec $vcs clone $url $dest]
+    puts [exec -ignorestderr -- $vcs clone $url $dest]
 }
 
 proc updategroup {group} {
