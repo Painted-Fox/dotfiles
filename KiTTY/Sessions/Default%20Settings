@@ -15,10 +15,11 @@ LogTimeRotation\0\
 LogTimestamp\\
 AntiIdle\\
 Scriptfile\\
-Password\v4b13\
+Password\40vv1\
 IconeFile\\
 Icone\1\
 SaveOnExit\0\
+Maximize\0\
 SendToTray\0\
 TransparencyValue\0\
 CygtermCommand\\
@@ -131,10 +132,10 @@ TryPalette\0\
 UseSystemColours\0\
 FontVTMode\4\
 FontQuality\3\
-FontHeight\10\
+FontHeight\11\
 FontCharSet\0\
 FontIsBold\0\
-Font\DejaVu%20Sans%20Mono%20for%20Powerline\
+Font\Consolas\
 TermHeight\25\
 TermWidth\100\
 WinTitle\\
