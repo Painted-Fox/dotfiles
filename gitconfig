@@ -1,0 +1,10 @@
+[user]
+    name = Ryan Seto
+    email = ryan.seto@bridgevine.com
+[core]
+    autocrlf = true
+    excludesfile = ~/dotfiles/gitignore_global
+[color]
+    ui = true
+[alias]
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit

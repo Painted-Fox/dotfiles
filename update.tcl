@@ -30,6 +30,7 @@ array set hgext {
 
 array set misc {
     dircolors-solarized {git git://github.com/seebi/dircolors-solarized.git}
+    ../.prezto          {git git://github.com/sorin-ionescu/prezto.git }
 }
 
 # Pulls and updates to the latest change.
