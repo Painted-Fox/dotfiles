@@ -7,6 +7,7 @@
 # https://github.com/statico/dotfiles/blob/master/.vim/update.sh
 
 set dotdir [file normalize [file dirname $argv0]]
+set cwd [pwd]
 
 array set vim {
     vim/bundle/closetag.vim  {git git://github.com/vim-scripts/closetag.vim.git}
@@ -34,17 +35,28 @@ array set misc {
 }
 
 # Pulls and updates to the latest change.
-proc pull {vcs dir} {
+proc pull {vcs dir submod} {
+    cd $dir
+
     if {[string equal $vcs git]} {
-        puts [exec -ignorestderr -- $vcs "--git-dir=$dir/.git" "--work-tree=$dir" pull origin master]
+        puts [exec -ignorestderr -- $vcs pull origin master]
+
+        if {$submod} {
+            puts [exec -ignorestderr -- $vcs submodule update]
+        }
     } elseif {[string equal $vcs hg]} {
-        puts [exec -ignorestderr -- $vcs -R "$dir" pull -u]
+        puts [exec -ignorestderr -- $vcs pull -u]
     }
 }
 
 # Clones the repository.
-proc clone {vcs url dest} {
+proc clone {vcs url dest submod} {
     puts [exec -ignorestderr -- $vcs clone $url $dest]
+
+    if {[string equal $vcs git] && $submod} {
+        cd $dest
+        puts [exec -ignorestderr -- $vcs submodule update --init]
+    }
 }
 
 proc updategroup {group} {
@@ -54,14 +66,21 @@ proc updategroup {group} {
         set url [lindex $remote 1]
         set dest "$dotdir/$dir"
 
+        # Do I have submodules?
+        set submod [expr {[llength $remote] > 2 && [lindex $remote 2]}]
+
         if {[file exists "$dest/.$vcs"]} {
-            pull $vcs $dest
+            pull $vcs $dest $submod
         } else {
-            clone $vcs $url $dest
+            clone $vcs $url $dest $submod
         }
     }
 }
 
-updategroup vim
-updategroup hgext
-updategroup misc
+try {
+    updategroup vim
+    updategroup hgext
+    updategroup misc
+} finally {
+    cd $cwd
+}
