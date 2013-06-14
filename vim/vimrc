@@ -13,10 +13,16 @@
 " Section: Key mappings {{{1
 "--------------------------------------------------------------------------
 
-" useful macros I use the most
-nmap \e :NERDTreeToggle<CR>
-nmap \l :setlocal number!<CR>:setlocal number?<CR>
-nmap \s :setlocal invspell<CR>
+" Remap leader to comma (,)
+let mapleader = ","
+
+" Frequently used macros
+nmap <Leader>e :NERDTreeToggle<CR>
+nmap <Leader>l :setlocal number!<CR>:setlocal number?<CR>
+nmap <Leader>s :setlocal invspell<CR>
+
+" Select all
+nmap <Leader>a ggVG
 
 " You don't know what you're missing if you don't use this.
 nmap <C-e> :e#<CR>
@@ -25,45 +31,26 @@ nmap <C-e> :e#<CR>
 map <C-n> :bnext<CR>
 map <C-p> :bprev<CR>
 
-" Let's try buffkill-vim using my favorite Emacs binding...
-nmap <Esc>k :BD<CR>
-nmap <M-k> :BD<CR>
-nmap <D-k> :BD<CR>
-
-" Emacs-like bindings in normal mode
-nmap <C-x>0 <C-w>c
-nmap <C-x>1 <C-w>o
-nmap <C-x>1 <C-w>s
-nmap <C-x>1 <C-w>v
-nmap <C-x>o <C-w><C-w>
-nmap <M-o> <C-w><C-w>
-
-" Emacs-like bindings in insert mode
-imap <C-e> <C-o>$
-
-" Emacs-like bindings in command line
-cnoremap <C-a>  <Home>
-cnoremap <C-b>  <Left>
-cnoremap <C-f>  <Right>
-cnoremap <C-d>  <Delete>
-cnoremap <M-b>  <S-Left>
-cnoremap <M-f>  <S-Right>
-cnoremap <M-d>  <S-right><Delete>
-cnoremap <Esc>b <S-Left>
-cnoremap <Esc>f <S-Right>
-cnoremap <Esc>d <S-right><Delete>
-cnoremap <C-g>  <C-c>
-
-" Why not use the space or return keys to toggle folds?
-nnoremap <space> za
-nnoremap <CR> za
-vnoremap <space> zf
-
 " Easier window movement.
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" Tab management.
+nnoremap <Leader>tc :tabc<return>
+nnoremap <Leader>tn :tabn<return>
+nnoremap <Leader>tp :tabp<return>
+nnoremap <Leader>te :tabe<space>
+
+" Reselect visual blokc after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" Why not use the space or return keys to toggle folds?
+nnoremap <space> za
+nnoremap <CR> za
+vnoremap <space> zf
 
 " Search for the word under the cursor in the current directory
 nmap <C-k> :Ag "\b<cword>\b" <CR>
@@ -76,6 +63,9 @@ function! RunUsingCurrentFiletype()
     execute 'write'
     execute '! clear; '.&filetype.' <% '
 endfunction
+
+" Protection against accidental F1 key.
+noremap <F1> <Esc>
 
 
 " Section: Hacks {{{1
