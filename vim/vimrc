@@ -67,6 +67,10 @@ endfunction
 " Protection against accidental F1 key.
 noremap <F1> <Esc>
 
+" Protect against accidental ; key. This does remove some functionality.
+" See: http://vim.wikia.com/wiki/Map_semicolon_to_colon
+nnoremap ; :
+
 
 " Section: Hacks {{{1
 "--------------------------------------------------------------------------
@@ -131,7 +135,7 @@ set cinkeys-=0#             " Comments don't fiddle with indenting
 set cino=(0                 " Indent newlines after opening parenthesis
 set commentstring=\ \ #%s   " When folds are created, add them to this
 set copyindent              " Make autoindent use the same chars as prev line
-set directory-=.            " Don't store temp files in cwd
+set directory=~/.vim/tmp//  " Don't store temp files in cwd
 set encoding=utf8           " UTF-8 by default
 set expandtab               " No tabs
 set fileformats=unix,dos,mac  " Prefer Unix
@@ -178,6 +182,8 @@ set softtabstop=4           " Spaces 'feel' like tabs
 set suffixes+=.pyc          " Ignore these files when tab-completing
 set tabstop=4               " The One True Tab
 set notitle                 " Don't set the title of the Vim window
+set undodir=~/.vim/undo//   " Don't store undo files in cwd
+set undofile                " Enable undo-persistence
 set wildmenu                " Show possible completions on command line
 set wildmode=list:longest,full " List all options and complete
 set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules  " Ignore certain files in tab-completion

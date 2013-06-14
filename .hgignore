@@ -10,6 +10,8 @@ Package Control.last-run
 
 syntax: regexp
 ^vim/bundle
+^vim/tmp
+^vim/undo
 ^hgext
 ^dircolors-solarized
 ^pentadactyl/info
