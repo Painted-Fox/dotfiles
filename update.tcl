@@ -32,7 +32,6 @@ array set hgext {
 
 array set misc {
     dircolors-solarized {git git://github.com/seebi/dircolors-solarized.git}
-    ../.prezto          {git git://github.com/sorin-ionescu/prezto.git }
 }
 
 # Pulls and updates to the latest change.
@@ -40,23 +39,23 @@ proc pull {vcs dir submod} {
     cd $dir
 
     if {[string equal $vcs git]} {
-        puts [exec -ignorestderr -- $vcs pull origin master]
+        echorun "exec -ignorestderr -- $vcs pull origin master"
 
         if {$submod} {
-            puts [exec -ignorestderr -- $vcs submodule update]
+            echorun "exec -ignorestderr -- $vcs submodule update"
         }
     } elseif {[string equal $vcs hg]} {
-        puts [exec -ignorestderr -- $vcs pull -u]
+        echorun "exec -ignorestderr -- $vcs pull -u"
     }
 }
 
 # Clones the repository.
 proc clone {vcs url dest submod} {
-    puts [exec -ignorestderr -- $vcs clone $url $dest]
+    echorun "exec -ignorestderr -- $vcs clone $url $dest"
 
     if {[string equal $vcs git] && $submod} {
         cd $dest
-        puts [exec -ignorestderr -- $vcs submodule update --init]
+        echorun "exec -ignorestderr -- $vcs submodule update --init"
     }
 }
 
@@ -76,6 +75,12 @@ proc updategroup {group} {
             clone $vcs $url $dest $submod
         }
     }
+}
+
+proc echorun {cmd} {
+    puts [pwd]
+    puts $cmd
+    puts [eval $cmd]
 }
 
 try {
