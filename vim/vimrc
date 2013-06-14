@@ -71,6 +71,10 @@ noremap <F1> <Esc>
 " See: http://vim.wikia.com/wiki/Map_semicolon_to_colon
 nnoremap ; :
 
+" Smash keys to <Esc> in insert mode.
+inoremap jk <Esc>
+inoremap kj <Esc>
+
 
 " Section: Hacks {{{1
 "--------------------------------------------------------------------------
