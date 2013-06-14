@@ -16,6 +16,7 @@ array set vim {
     vim/bundle/nerdtree      {git git://github.com/scrooloose/nerdtree.git}
     vim/bundle/powerline     {git git://github.com/Lokaltog/powerline.git}
     vim/bundle/rename.vim    {git git://github.com/danro/rename.vim.git}
+    vim/bundle/scratch.vim   {git git://github.com/vim-scripts/scratch.vim.git}
     vim/bundle/syntastic     {git git://github.com/scrooloose/syntastic.git}
     vim/bundle/vim-pathogen  {git git://github.com/tpope/vim-pathogen.git}
     vim/bundle/zenburn       {git git://github.com/jnurmine/Zenburn.git}
