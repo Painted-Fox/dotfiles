@@ -14,16 +14,17 @@ array set vim {
     vim/bundle/ctrlp         {hg  https://bitbucket.org/kien/ctrlp.vim}
     vim/bundle/dart          \
         {git git://github.com/dart-lang/dart-vim-plugin.git}
+    vim/bundle/fugitive      {git git://github.com/tpope/vim-fugitive.git}
+    vim/bundle/golang        {git git://github.com/jnwhiteh/vim-golang.git}
+    vim/bundle/json          {git git://github.com/elzr/vim-json.git}
     vim/bundle/molokai       {git git://github.com/tomasr/molokai.git}
     vim/bundle/nerdtree      {git git://github.com/scrooloose/nerdtree.git}
+    vim/bundle/pathogen      {git git://github.com/tpope/vim-pathogen.git}
     vim/bundle/powerline     {git git://github.com/Lokaltog/powerline.git}
     vim/bundle/rename        {git git://github.com/danro/rename.vim.git}
     vim/bundle/riv           {git git://github.com/Rykka/riv.vim.git}
     vim/bundle/scratch       {git git://github.com/vim-scripts/scratch.vim.git}
     vim/bundle/syntastic     {git git://github.com/scrooloose/syntastic.git}
-    vim/bundle/golang        {git git://github.com/jnwhiteh/vim-golang.git}
-    vim/bundle/json          {git git://github.com/elzr/vim-json.git}
-    vim/bundle/pathogen      {git git://github.com/tpope/vim-pathogen.git}
     vim/bundle/zenburn       {git git://github.com/jnurmine/Zenburn.git}
 }
 
