@@ -37,13 +37,15 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Easier tab movement.
+map <S-l> :tabnext<return>
+map <S-h> :tabprevious<return>
+
 " Tab management.
 nnoremap <Leader>tc :tabc<return>
-nnoremap <Leader>tn :tabn<return>
-nnoremap <Leader>tp :tabp<return>
 nnoremap <Leader>te :tabe<space>
 
-" Reselect visual blokc after indent/outdent
+" Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
 
@@ -75,9 +77,18 @@ nnoremap ; :
 inoremap jk <Esc>
 inoremap kj <Esc>
 
+" Shortcut to open the vimrc file in a new tab.
+nmap <Leader>v :tabedit $MYVIMRC<return>
+
 
 " Section: Hacks {{{1
 "--------------------------------------------------------------------------
+
+" Autoload configuration automatically {{{2
+
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
 
 " Make j & k linewise {{{2
 
