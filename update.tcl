@@ -14,6 +14,8 @@ array set vim {
     vim/bundle/ctrlp         {hg  https://bitbucket.org/kien/ctrlp.vim}
     vim/bundle/dart          \
         {git git://github.com/dart-lang/dart-vim-plugin.git}
+    vim/bundle/dosbatch-indent \
+        {git git://github.com/vim-scripts/dosbatch-indent.git}
     vim/bundle/fugitive      {git git://github.com/tpope/vim-fugitive.git}
     vim/bundle/golang        {git git://github.com/jnwhiteh/vim-golang.git}
     vim/bundle/json          {git git://github.com/elzr/vim-json.git}
