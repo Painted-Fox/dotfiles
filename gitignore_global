@@ -22,3 +22,7 @@ Thumbs.db
 *.dll
 *.lib
 *.sbr
+
+# Ignore BTSync files.
+.SyncID
+.SyncIgnore
