@@ -81,6 +81,9 @@ inoremap kj <Esc>
 " Shortcut to open the vimrc file in a new tab.
 nmap <Leader>v :tabedit $MYVIMRC<return>
 
+" Hard wrap the current paragraph.  Similar to emacs and Sublime Text.
+nmap <Leader>q gqip
+
 
 " Section: Hacks {{{1
 "--------------------------------------------------------------------------
