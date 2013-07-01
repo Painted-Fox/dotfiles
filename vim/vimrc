@@ -15,6 +15,7 @@
 
 " Remap leader to comma (,)
 let mapleader = ","
+let maplocalleader = ","
 
 " Frequently used macros
 nmap <Leader>e :NERDTreeToggle<CR>
@@ -233,10 +234,6 @@ endfunction
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
-
-" for any plugins that use this, make their keymappings use comma
-let mapleader = ","
-let maplocalleader = ","
 
 " Explore.vim (comes with Vim 6)
 let explVertical = 1
