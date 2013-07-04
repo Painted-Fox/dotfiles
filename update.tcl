@@ -33,9 +33,9 @@ array set vim {
 array set hgext {
     hgext/hg-git    {hg https://bitbucket.org/durin42/hg-git}
     hgext/hg-review {hg http://bitbucket.org/sjl/hg-review}
-    hgext/machina   {hg https://bitbucket.org/MrWerewolf/mercurial-machina}
-    hgext/rsync     {hg https://bitbucket.org/MrWerewolf/hg-rsync}
-    hgext/rupdate   {hg https://bitbucket.org/MrWerewolf/rupdate}
+    hgext/machina   {hg https://bitbucket.org/Sly-Fox/mercurial-machina}
+    hgext/rsync     {hg https://bitbucket.org/Sly-Fox/hg-rsync}
+    hgext/rupdate   {hg https://bitbucket.org/Sly-Fox/rupdate}
 }
 
 array set misc {
