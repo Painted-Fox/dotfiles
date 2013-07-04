@@ -10,6 +10,7 @@ set dotdir [file normalize [file dirname $argv0]]
 set cwd [pwd]
 
 array set vim {
+    vim/bundle/ack           {git git://github.com/mileszs/ack.vim}
     vim/bundle/closetag      {git git://github.com/vim-scripts/closetag.vim.git}
     vim/bundle/ctrlp         {hg  https://bitbucket.org/kien/ctrlp.vim}
     vim/bundle/dart          \
