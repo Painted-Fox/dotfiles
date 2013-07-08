@@ -10,37 +10,37 @@ set dotdir [file normalize [file dirname $argv0]]
 set cwd [pwd]
 
 array set vim {
-    vim/bundle/ack           {git git://github.com/mileszs/ack.vim}
-    vim/bundle/airline       {git git://github.com/bling/vim-airline.git}
-    vim/bundle/closetag      {git git://github.com/vim-scripts/closetag.vim.git}
+    vim/bundle/ack           {git https://github.com/mileszs/ack.vim}
+    vim/bundle/airline       {git https://github.com/bling/vim-airline}
+    vim/bundle/closetag      {git https://github.com/vim-scripts/closetag.vim}
     vim/bundle/ctrlp         {hg  https://bitbucket.org/kien/ctrlp.vim}
     vim/bundle/dart          \
-        {git git://github.com/dart-lang/dart-vim-plugin.git}
+        {git https://github.com/dart-lang/dart-vim-plugin}
     vim/bundle/dosbatch-indent \
-        {git git://github.com/vim-scripts/dosbatch-indent.git}
-    vim/bundle/fugitive      {git git://github.com/tpope/vim-fugitive.git}
-    vim/bundle/golang        {git git://github.com/jnwhiteh/vim-golang.git}
-    vim/bundle/json          {git git://github.com/elzr/vim-json.git}
-    vim/bundle/molokai       {git git://github.com/tomasr/molokai.git}
-    vim/bundle/nerdtree      {git git://github.com/scrooloose/nerdtree.git}
-    vim/bundle/pathogen      {git git://github.com/tpope/vim-pathogen.git}
-    vim/bundle/rename        {git git://github.com/danro/rename.vim.git}
-    vim/bundle/riv           {git git://github.com/Rykka/riv.vim.git}
-    vim/bundle/scratch       {git git://github.com/vim-scripts/scratch.vim.git}
-    vim/bundle/syntastic     {git git://github.com/scrooloose/syntastic.git}
-    vim/bundle/zenburn       {git git://github.com/jnurmine/Zenburn.git}
+        {git https://github.com/vim-scripts/dosbatch-indent}
+    vim/bundle/fugitive      {git https://github.com/tpope/vim-fugitive}
+    vim/bundle/golang        {git https://github.com/jnwhiteh/vim-golang}
+    vim/bundle/json          {git https://github.com/elzr/vim-json}
+    vim/bundle/molokai       {git https://github.com/tomasr/molokai}
+    vim/bundle/nerdtree      {git https://github.com/scrooloose/nerdtree}
+    vim/bundle/pathogen      {git https://github.com/tpope/vim-pathogen}
+    vim/bundle/rename        {git https://github.com/danro/rename.vim}
+    vim/bundle/riv           {git https://github.com/Rykka/riv.vim}
+    vim/bundle/scratch       {git https://github.com/vim-scripts/scratch.vim}
+    vim/bundle/syntastic     {git https://github.com/scrooloose/syntastic}
+    vim/bundle/zenburn       {git https://github.com/jnurmine/Zenburn}
 }
 
 array set hgext {
     hgext/hg-git    {hg https://bitbucket.org/durin42/hg-git}
-    hgext/hg-review {hg http://bitbucket.org/sjl/hg-review}
+    hgext/hg-review {hg https://bitbucket.org/sjl/hg-review}
     hgext/machina   {hg https://bitbucket.org/Sly-Fox/mercurial-machina}
     hgext/rsync     {hg https://bitbucket.org/Sly-Fox/hg-rsync}
     hgext/rupdate   {hg https://bitbucket.org/Sly-Fox/rupdate}
 }
 
 array set misc {
-    dircolors-solarized {git git://github.com/seebi/dircolors-solarized.git}
+    dircolors-solarized {git https://github.com/seebi/dircolors-solarized}
 }
 
 # Pulls and updates to the latest change.
