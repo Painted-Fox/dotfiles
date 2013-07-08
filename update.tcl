@@ -48,23 +48,23 @@ proc pull {vcs dir submod} {
     cd $dir
 
     if {[string equal $vcs git]} {
-        echorun "exec -ignorestderr -- $vcs pull origin master"
+        run "$vcs pull origin master"
 
         if {$submod} {
-            echorun "exec -ignorestderr -- $vcs submodule update"
+            run "$vcs submodule update"
         }
     } elseif {[string equal $vcs hg]} {
-        echorun "exec -ignorestderr -- $vcs pull -u"
+        run "$vcs pull -u"
     }
 }
 
 # Clones the repository.
 proc clone {vcs url dest submod} {
-    echorun "exec -ignorestderr -- $vcs clone $url $dest"
+    run "$vcs clone $url $dest"
 
     if {[string equal $vcs git] && $submod} {
         cd $dest
-        echorun "exec -ignorestderr -- $vcs submodule update --init"
+        run "$vcs submodule update --init"
     }
 }
 
@@ -86,16 +86,19 @@ proc updategroup {group} {
     }
 }
 
-proc echorun {cmd} {
-    puts [pwd]
-    puts $cmd
-    puts [eval $cmd]
+proc run {cmd} {
+    if {[catch {exec {*}[split $cmd " "]} results options]} {
+        set details [dict get $options -errorcode]
+        if {$details != {NONE}} {
+            puts "Dir: [pwd]"
+            puts "Cmd: $cmd"
+            puts "Err: $details"
+            puts $results
+            exit
+        }
+    }
 }
 
-try {
-    updategroup vim
-    updategroup hgext
-    updategroup misc
-} finally {
-    cd $cwd
-}
+updategroup vim
+updategroup hgext
+updategroup misc
