@@ -11,6 +11,7 @@ set cwd [pwd]
 
 array set vim {
     vim/bundle/ack           {git git://github.com/mileszs/ack.vim}
+    vim/bundle/airline       {git git://github.com/bling/vim-airline.git}
     vim/bundle/closetag      {git git://github.com/vim-scripts/closetag.vim.git}
     vim/bundle/ctrlp         {hg  https://bitbucket.org/kien/ctrlp.vim}
     vim/bundle/dart          \
@@ -23,7 +24,6 @@ array set vim {
     vim/bundle/molokai       {git git://github.com/tomasr/molokai.git}
     vim/bundle/nerdtree      {git git://github.com/scrooloose/nerdtree.git}
     vim/bundle/pathogen      {git git://github.com/tpope/vim-pathogen.git}
-    vim/bundle/powerline     {git git://github.com/Lokaltog/powerline.git}
     vim/bundle/rename        {git git://github.com/danro/rename.vim.git}
     vim/bundle/riv           {git git://github.com/Rykka/riv.vim.git}
     vim/bundle/scratch       {git git://github.com/vim-scripts/scratch.vim.git}
