@@ -6,6 +6,22 @@
     excludesfile = ~/dotfiles/gitignore_global
 [push]
     default = simple
+[diff]
+    tool = meld
+[difftool "meld"]
+    prompt = false
+    keepBackup = false
+    keepTemporaries = false
+    path = C:/Program Files (x86)/Meld/meld/meld.exe
+    cmd = \"/c/Program Files (x86)/Meld/meld/meld.exe\" \"$PWD/$LOCAL\" \"$PWD/$REMOTE\"
+[merge]
+    tool = meld
+[mergetool "meld"]
+    prompt = false
+    keepBackup = false
+    keepTemporaries = false
+    path = C:/Program Files (x86)/Meld/meld/meld.exe
+    cmd = \"/c/Program Files (x86)/Meld/meld/meld.exe\" \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" \"--output=$PWD/$MERGED\"
 [color]
     ui = true
 [alias]
