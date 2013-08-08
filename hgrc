@@ -1,8 +1,6 @@
 [ui]
-username = Ryan Seto <mr.werewolf@gmail.com>
-
-[hostfingerprints]
-code.mrwerewolf.com=39:FA:A7:75:76:5A:69:73:08:5D:E3:BA:08:05:D9:70:08:4A:64:2A
+username = Ryan Seto <ryanseto@yak.net>
+merge = meld
 
 [extensions]
 hgext.bookmarks =
@@ -24,13 +22,13 @@ hggit = ~/dotfiles/hgext/hg-git/hggit
 # Hg-Review (http://sjl.bitbucket.org/hg-review/)
 review = ~/dotfiles/hgext/hg-review/review
 
-# Mercurial Machina (https://bitbucket.org/MrWerewolf/mercurial-machina/wiki/Home)
+# Mercurial Machina (https://bitbucket.org/Sly-Fox/mercurial-machina/wiki/Home)
 machina = ~/dotfiles/hgext/machina
 
-# Mercurial remote sync (https://bitbucket.org/MrWerewolf/hg-rsync)
+# Mercurial remote sync (https://bitbucket.org/Sly-Fox/hg-rsync)
 rsync = ~/dotfiles/hgext/rsync/hg-rsync.py
 
-# Remote update (https://bitbucket.org/MrWerewolf/rupdate/wiki/Home)
+# Remote update (https://bitbucket.org/Sly-Fox/rupdate/wiki/Home)
 rupdate = ~/dotfiles/hgext/rupdate
 
 [smtp]
@@ -44,13 +42,13 @@ pager = less
 ignore = version, help, update, serve, record
 
 [tortoisehg]
-editor = "C:\Program Files\Sublime Text 2\sublime_text.exe" [$FILE:$LINENUM]
-shell = "C:\Program Files\ConEmu\ConEmu64.exe" /dir "%(reponame)s" /cmd powershell
+editor = gvim -f [-c":set hls" -c"/$SEARCH/"] [+$LINENUM $FILE]
 fontcomment = Consolas,10,-1,5,50,0,0,0,0,0
 fontdiff = Consolas,10,-1,5,50,0,0,0,0,0
-fontlist = Verdana,9,-1,5,50,0,0,0,0,0
+fontlist = Segoe UI,9,-1,5,50,0,0,0,0,0
 fontlog = Consolas,10,-1,5,50,0,0,0,0,0
-fontoutputlog = Verdana,8,-1,5,50,0,0,0,0,0
+fontoutputlog = Segoe UI,8,-1,5,50,0,0,0,0,0
 tabwidth = 4
 forcerepotab = True
 workbench.single = True
+vdiff = meld
