@@ -1,6 +1,6 @@
 [user]
     name = Ryan Seto
-    email = mr.werewolf@gmail.com
+    email = ryanseto@yak.net
 [core]
     autocrlf = true
     excludesfile = ~/dotfiles/gitignore_global
