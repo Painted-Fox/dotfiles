@@ -25,7 +25,6 @@ array set vim {
     vim/bundle/nerdtree      {git https://github.com/scrooloose/nerdtree}
     vim/bundle/pathogen      {git https://github.com/tpope/vim-pathogen}
     vim/bundle/rename        {git https://github.com/danro/rename.vim}
-    vim/bundle/riv           {git https://github.com/Rykka/riv.vim}
     vim/bundle/scratch       {git https://github.com/vim-scripts/scratch.vim}
     vim/bundle/syntastic     {git https://github.com/scrooloose/syntastic}
     vim/bundle/zenburn       {git https://github.com/jnurmine/Zenburn}
