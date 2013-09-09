@@ -2,7 +2,7 @@
     name = Ryan Seto
     email = ryanseto@yak.net
 [core]
-    autocrlf = true
+    autocrlf = input
     excludesfile = ~/dotfiles/gitignore_global
 [push]
     default = simple
