@@ -1,9 +1,4 @@
 " vim:fdm=marker:ts=4:sw=4:et:
-"        _
-" __   _(_)_ __ ___  _ __ ___
-" \ \ / / | '_ ` _ \| '__/ __|
-"  \ V /| | | | | | | | | (__
-"   \_/ |_|_| |_| |_|_|  \___|
 "
 " Ryan's .vimrc file
 "
@@ -177,7 +172,7 @@ set infercase               " Completion recognizes capitalization
 set laststatus=2            " Always show the status bar
 set linebreak               " Break long lines by word, not char
 set list                    " Show invisble characters in listchars
-set listchars=tab:▸\ ,trail:◂,extends:»,precedes:«
+set listchars=tab:▒\ ,trail:░,extends:»,precedes:«
                             " Unicode characters for various things
 set matchtime=2             " Tenths of second to hilight matching paren
 set modelines=5             " How many lines of head & tail to look for ml's
@@ -194,7 +189,7 @@ set shiftround              " Shift to certain columns, not just n spaces
 set shiftwidth=4            " Number of spaces to shift for autoindent or >,<
 set shortmess+=A            " Don't bother me when a swapfile exists
 set showbreak=              " Show for lines that have been wrapped, like Emacs
-set showmatch               " Hilight matching braces/parens/etc.
+set showmatch               " Highlight matching braces/parens/etc.
 set sidescrolloff=3         " Keep cursor away from this many chars left/right
 set smartcase               " Lets you search for ALL CAPS
 set softtabstop=4           " Spaces 'feel' like tabs
