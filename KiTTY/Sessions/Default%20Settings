@@ -15,7 +15,7 @@ LogTimeRotation\0\
 LogTimestamp\\
 AntiIdle\\
 Scriptfile\\
-Password\40vv1\
+Password\6b3p3\
 IconeFile\\
 Icone\1\
 SaveOnExit\0\
@@ -135,7 +135,7 @@ FontQuality\3\
 FontHeight\11\
 FontCharSet\0\
 FontIsBold\0\
-Font\Consolas\
+Font\Source%20Code%20Pro\
 TermHeight\25\
 TermWidth\100\
 WinTitle\\
