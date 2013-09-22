@@ -16,6 +16,11 @@ mklink "%HOME%\.gitconfig" "%DOT%\gitconfig"
 echo "Linking kdiff3 configuration."
 mklink "%HOME%\.kdiff3rc" "%DOT%\kdiff3rc"
 
+echo "Linking KiTTY."
+mkdir "C:\tools\KiTTY"
+mklink /d "C:\tools\KiTTY\Sessions" "%DOT%\KiTTY\Sessions"
+mklink "C:\tools\KiTTY\kitty.ini" "%DOT%\KiTTY\kitty.ini"
+
 echo "Linking Vim."
 mklink /d "%HOME%\.vim"  "%DOT%\vim"
 mklink "%HOME%\.vimrc"   "%DOT%\vim\vimrc"
