@@ -1,28 +1,50 @@
 [user]
     name = Ryan Seto
     email = ryanseto@yak.net
+
 [core]
     autocrlf = input
     excludesfile = ~/dotfiles/gitignore_global
+
 [push]
     default = simple
+
 [diff]
-    tool = meld
+    tool = kdiff3
+
+[difftool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
+
+[difftool "sourcetree"]
+    cmd = 'C:/Program Files/KDiff3/kdiff3.exe' \"$LOCAL\" \"$REMOTE\"
+
 [difftool "meld"]
     prompt = false
     keepBackup = false
     keepTemporaries = false
     path = C:/Program Files (x86)/Meld/meld/meld.exe
     cmd = \"/c/Program Files (x86)/Meld/meld/meld.exe\" \"$PWD/$LOCAL\" \"$PWD/$REMOTE\"
+
 [merge]
-    tool = meld
+    tool = kdiff3
+
+[mergetool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
+    trustExitCode = true
+
+[mergetool "sourcetree"]
+    cmd = 'C:/Program Files/KDiff3/kdiff3.exe' \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+    trustExitCode = true
+
 [mergetool "meld"]
     prompt = false
     keepBackup = false
     keepTemporaries = false
     path = C:/Program Files (x86)/Meld/meld/meld.exe
     cmd = \"/c/Program Files (x86)/Meld/meld/meld.exe\" \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" \"--output=$PWD/$MERGED\"
+
 [color]
     ui = true
+
 [alias]
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
