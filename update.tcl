@@ -10,21 +10,12 @@ set dotdir [file normalize [file dirname $argv0]]
 set cwd [pwd]
 
 array set vim {
-    vim/bundle/ack           {git https://github.com/mileszs/ack.vim}
     vim/bundle/airline       {git https://github.com/bling/vim-airline}
-    vim/bundle/closetag      {git https://github.com/vim-scripts/closetag.vim}
-    vim/bundle/ctrlp         {hg  https://bitbucket.org/kien/ctrlp.vim}
-    vim/bundle/dart          \
-        {git https://github.com/dart-lang/dart-vim-plugin}
     vim/bundle/dosbatch-indent \
         {git https://github.com/vim-scripts/dosbatch-indent}
-    vim/bundle/fugitive      {git https://github.com/tpope/vim-fugitive}
     vim/bundle/golang        {git https://github.com/jnwhiteh/vim-golang}
-    vim/bundle/json          {git https://github.com/elzr/vim-json}
-    vim/bundle/molokai       {git https://github.com/tomasr/molokai}
     vim/bundle/nerdtree      {git https://github.com/scrooloose/nerdtree}
     vim/bundle/pathogen      {git https://github.com/tpope/vim-pathogen}
-    vim/bundle/rename        {git https://github.com/danro/rename.vim}
     vim/bundle/scratch       {git https://github.com/vim-scripts/scratch.vim}
     vim/bundle/syntastic     {git https://github.com/scrooloose/syntastic}
     vim/bundle/zenburn       {git https://github.com/jnurmine/Zenburn}
