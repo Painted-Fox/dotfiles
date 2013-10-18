@@ -1,6 +1,5 @@
 [ui]
 username = Ryan Seto <ryanseto@yak.net>
-merge = meld
 
 [extensions]
 hgext.bookmarks =
@@ -16,12 +15,6 @@ hgext.record =
 hgext.share =
 mercurial_keyring =
 
-# Hg-Git (https://bitbucket.org/durin42/hg-git)
-hggit = ~/dotfiles/hgext/hg-git/hggit
-
-# Hg-Review (http://sjl.bitbucket.org/hg-review/)
-review = ~/dotfiles/hgext/hg-review/review
-
 # Mercurial Machina (https://bitbucket.org/Sly-Fox/mercurial-machina/wiki/Home)
 machina = ~/dotfiles/hgext/machina
 
@@ -30,9 +23,6 @@ rsync = ~/dotfiles/hgext/rsync/hg-rsync.py
 
 # Remote update (https://bitbucket.org/Sly-Fox/rupdate/wiki/Home)
 rupdate = ~/dotfiles/hgext/rupdate
-
-[smtp]
-host = mail.photobooks.com
 
 [diff]
 git = True
@@ -51,4 +41,3 @@ fontoutputlog = Segoe UI,8,-1,5,50,0,0,0,0,0
 tabwidth = 4
 forcerepotab = True
 workbench.single = True
-vdiff = meld

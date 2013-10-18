@@ -9,6 +9,13 @@
 set dotdir [file normalize [file dirname $argv0]]
 set cwd [pwd]
 
+# List of directories to clean.
+set clean_dirs {
+    vim/bundle
+    dircolors-solarized
+    hgext
+}
+
 array set vim {
     vim/bundle/airline       {git https://github.com/bling/vim-airline}
     vim/bundle/dosbatch-indent \
@@ -21,8 +28,6 @@ array set vim {
 }
 
 array set hgext {
-    hgext/hg-git    {hg https://bitbucket.org/durin42/hg-git}
-    hgext/hg-review {hg https://bitbucket.org/sjl/hg-review}
     hgext/machina   {hg https://bitbucket.org/Painted-Fox/mercurial-machina}
     hgext/rsync     {hg https://bitbucket.org/Painted-Fox/hg-rsync}
     hgext/rupdate   {hg https://bitbucket.org/Painted-Fox/rupdate}
@@ -47,9 +52,30 @@ proc pull {vcs dir submod} {
     }
 }
 
+# Cleans the directories
+proc clean {} {
+    global dotdir clean_dirs
+    foreach {dir} $clean_dirs {
+        file delete -force "$dotdir/$dir"
+    }
+}
+
 # Clones the repository.
 proc clone {vcs url dest submod} {
-    run "$vcs clone $url $dest"
+    global hgext
+
+    if {[string equal $vcs hg]} {
+        # Disable mods that we don't have yet.
+        set config {}
+        foreach {dir remote} [array get hgext] {
+            set extension [lindex [split $dir /] 1]
+            lappend config --config "extensions.$extension=!"
+        }
+
+        run "$vcs clone $config $url $dest"
+    } else {
+        run "$vcs clone $url $dest"
+    }
 
     if {[string equal $vcs git] && $submod} {
         cd $dest
@@ -88,6 +114,7 @@ proc run {cmd} {
     }
 }
 
+clean
 updategroup vim
 updategroup hgext
 updategroup misc
