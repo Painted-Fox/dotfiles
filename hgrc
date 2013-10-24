@@ -13,7 +13,6 @@ hgext.purge =
 hgext.rebase =
 hgext.record =
 hgext.share =
-mercurial_keyring =
 
 # Mercurial Machina (https://bitbucket.org/Sly-Fox/mercurial-machina/wiki/Home)
 machina = ~/dotfiles/hgext/machina
