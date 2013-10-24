@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 # This script links the configurations in the dotfiles to their appropriate
 # locations on posix operating systems.
 
@@ -28,9 +28,8 @@ if [ $( ls -1 "$dot/vim/bundle/" | wc -l ) -le 1 ]; then
   vim +BundleInstall! +BundleClean +qall
 fi
 
+dot_link "gemrc"             ".gemrc"
+dot_link "gitconfig"         ".gitconfig"
 dot_link "hgrc"              ".hgrc"
-dot_link "hgext"             ".hgext"
-dot_link "zshrc"             ".zshrc"
-dot_link "zprofile"          ".zprofile"
-dot_link "mintty"            ".mintty"
+dot_link "kdiff3rc"          ".kdiff3rc"
 dot_link "tmux.conf"         ".tmux.conf"
