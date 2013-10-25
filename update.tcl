@@ -21,6 +21,8 @@ array set vim {
     vim/bundle/dosbatch-indent \
         {git https://github.com/vim-scripts/dosbatch-indent}
     vim/bundle/golang        {git https://github.com/jnwhiteh/vim-golang}
+    vim/bundle/markdown      \
+        {git https://github.com/plasticboy/vim-markdown.git}
     vim/bundle/nerdtree      {git https://github.com/scrooloose/nerdtree}
     vim/bundle/pathogen      {git https://github.com/tpope/vim-pathogen}
     vim/bundle/scratch       {git https://github.com/vim-scripts/scratch.vim}

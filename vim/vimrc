@@ -211,7 +211,8 @@ cmap w!! w !sudo tee >/dev/null %
 
 " trim spaces at EOL
 command! TEOL %s/ \+$//
-command! CLEAN retab | TEOL
+command! MEOL %s///
+command! CLEAN retab | TEOL | MEOL
 
 " hightlight more than 80 characters
 function! HighlightTooLongLines()
@@ -244,6 +245,9 @@ let NERDTreeIgnore = ['\~$', '\.pyc$']
 let g:airline_theme='solarized'
 let g:airline_left_sep='»'
 let g:airline_right_sep='«'
+
+" Markdown
+let g:vim_markdown_folding_disabled=1
 
 " enable filetype plugins -- e.g., ftplugin/xml.vim
 filetype plugin indent on
