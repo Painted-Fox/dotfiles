@@ -27,7 +27,7 @@ rupdate = ~/dotfiles/hgext/rupdate
 git = True
 
 [pager]
-pager = less
+pager = less -r
 ignore = version, help, update, serve, record
 
 [tortoisehg]
