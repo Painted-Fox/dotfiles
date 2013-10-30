@@ -20,3 +20,8 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+# Add scripts in my dockerfiles directory.
+if [ -d "$HOME/dockerfiles/bin" ] ; then
+    PATH="$HOME/dockerfiles/bin:$PATH"
+fi
