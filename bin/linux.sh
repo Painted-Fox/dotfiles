@@ -23,6 +23,11 @@ dot_link "vim"               ".vim"
 dot_link "vim/vimrc"         ".vimrc"
 dot_link "vim/gvimrc"        ".gvimrc"
 
+# Install shell dotfiles.
+dot_link "shell/profile"      ".profile"
+dot_link "shell/bashrc"       ".bashrc"
+dot_link "shell/bash_aliases" ".bash_aliases"
+
 if [ $( ls -1 "$dot/vim/bundle/" | wc -l ) -le 1 ]; then
   echo "Installing: Vim Bundles"
   vim +BundleInstall! +BundleClean +qall

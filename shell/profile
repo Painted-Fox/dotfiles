@@ -20,5 +20,3 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
-eval `dircolors ~/dotfiles/dircolors-solarized/dircolors.256dark`
