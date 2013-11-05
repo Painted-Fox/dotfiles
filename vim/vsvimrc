@@ -1,3 +1,12 @@
+" Load our normal settings.
+if filereadable(expand("~/.vimrc"))
+    source ~/.vimrc
+endif
+if filereadable(expand("~/.gvimrc"))
+    source ~/.gvimrc
+endif
+
+" VSVim specific settings.
 set shiftwidth=4                " use indents of 2 spaces
 set tabstop=4                   " an indentation every four columns
 set softtabstop=4               " let backspace delete indent
