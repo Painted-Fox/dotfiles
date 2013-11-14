@@ -185,7 +185,7 @@ set shiftround              " Shift to certain columns, not just n spaces
 set shiftwidth=4            " Number of spaces to shift for autoindent or >,<
 set shortmess+=A            " Don't bother me when a swapfile exists
 set showbreak=              " Show for lines that have been wrapped, like Emacs
-set showmatch               " Highlight matching braces/parens/etc.
+set noshowmatch             " (Disable for omnicomplete) Highlight matching braces/parens/etc.
 set sidescrolloff=3         " Keep cursor away from this many chars left/right
 set smartcase               " Lets you search for ALL CAPS
 set softtabstop=4           " Spaces 'feel' like tabs
@@ -226,30 +226,135 @@ endfunction
 " Section: Plugin settings {{{1
 "--------------------------------------------------------------------------
 
-" A new Vim package system
+" A new Vim package system {{{2
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
-" Explore.vim (comes with Vim 6)
+" Explore.vim (comes with Vim 6) {{{2
 let explVertical = 1
 let explSplitRight = 1
 let explWinSize = 30
 let explHideFiles = '^\.,\.(class|swp|pyc|pyo)$,^CVS$'
 let explDirsFirst = -1
 
-" NERD_tree.vim
+" NERD_tree.vim {{{2
 let NERDTreeIgnore = ['\~$', '\.pyc$']
 
-" Airline
+" Airline {{{2
 let g:airline_theme='solarized'
 let g:airline_left_sep='»'
 let g:airline_right_sep='«'
 
-" Markdown
+" Markdown {{{2
 let g:vim_markdown_folding_disabled=1
 
-" enable filetype plugins -- e.g., ftplugin/xml.vim
+" Supertab {{{2
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
+let g:SuperTabClosePreviewOnPopupClose = 1
+
+" Neocomplete {{{2
+" I got these settings from the Omnisharp readme.
+let g:neocomplete_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplete_enable_camel_case_completion = 1
+" Use underscore completion.
+let g:neocomplete_enable_underbar_completion = 1
+" Sets minimum char length of syntax keyword.
+let g:neocomplete_min_syntax_length = 0
+" buffer file name pattern that locks neocomplete. e.g. ku.vim or fuzzyfinder 
+"let g:neocomplete_lock_buffer_name_pattern = '\*ku\*'
+
+let g:neocomplete_enable_auto_close_preview = 0
+" Define keyword, for minor languages
+if !exists('g:neocomplete_keyword_patterns')
+  let g:neocomplete_keyword_patterns = {}
+endif
+let g:neocomplete_keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB> neocomplete#sources#snippets_complete#expandable() ? "\<Plug>(neocomplete_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() : "\<CR>"
+inoremap <expr>.  neocomplete#close_popup() . "."
+inoremap <expr>(  neocomplete#close_popup() . "("
+inoremap <expr>)  neocomplete#close_popup() . ")"
+inoremap <expr><space>  neocomplete#close_popup() . " "
+inoremap <expr>;  neocomplete#close_popup() . ";"
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+inoremap <expr><ESC> pumvisible() ? neocomplete#cancel_popup() : "\<esc>"
+
+" AutoComplPop like behavior.
+let g:neocomplete_enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+set completeopt+=longest
+"let g:neocomplete_disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<TAB>"
+"inoremap <expr><CR>  neocomplete#smart_close_popup() . "\<CR>"
+
+
+" Enable heavy omni completion, which require computational power and may stall the vim. 
+if !exists('g:neocomplete_omni_patterns')
+  let g:neocomplete_omni_patterns = {}
+endif
+let g:neocomplete_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplete_omni_patterns.cs = '.*'
+"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+let g:neocomplete_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplete_omni_patterns.c = '\%(\.\|->\)\h\w*'
+
+" Omnisharp {{{2
+
+"don't autoselect first item in omnicomplete, show if only one item (for preview)
+set completeopt=longest,menuone,preview
+
+nnoremap <F5> :wa!<cr>:OmniSharpBuild<cr>
+" Builds can run asynchronously with vim-dispatch installed
+"nnoremap <F5> :wa!<cr>:OmniSharpBuildAsync<cr>
+
+nnoremap <F12> :OmniSharpGotoDefinition<cr>
+nnoremap gd :OmniSharpGotoDefinition<cr>
+nnoremap <leader>fi :OmniSharpFindImplementations<cr>
+nnoremap <leader>ft :OmniSharpFindType<cr>
+nnoremap <leader>fs :OmniSharpFindSymbol<cr>
+nnoremap <leader>fu :OmniSharpFindUsages<cr>
+nnoremap <leader>fm :OmniSharpFindMembersInBuffer<cr>
+nnoremap <leader>tt :OmniSharpTypeLookup<cr>
+"I find contextual code actions so useful that I have it mapped to the spacebar
+nnoremap <space> :OmniSharpGetCodeActions<cr>
+
+" rename with dialog
+nnoremap <leader>nm :OmniSharpRename<cr>
+nnoremap <F2> :OmniSharpRename<cr>      
+" rename without dialog - with cursor on the symbol to rename... ':Rename newname'
+command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
+" Force OmniSharp to reload the solution. Useful when switching branches etc.
+nnoremap <leader>rl :OmniSharpReloadSolution<cr>
+nnoremap <leader>cf :OmniSharpCodeFormat<cr>
+nnoremap <leader>tp :OmniSharpAddToProject<cr>
+" (Experimental - uses vim-dispatch or vimproc plugin) - Start the omnisharp server for the current solution
+nnoremap <leader>ss :OmniSharpStartServer<cr>
+nnoremap <leader>sp :OmniSharpStopServer<cr>
+nnoremap <leader>th :OmniSharpHighlightTypes<cr>
+
+" enable filetype plugins -- e.g., ftplugin/xml.vim {{{2
 filetype plugin indent on
 
 " Section: Color and syntax {{{1
