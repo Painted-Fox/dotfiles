@@ -18,19 +18,14 @@ set clean_dirs {
 
 array set vim {
     vim/bundle/airline       {git https://github.com/bling/vim-airline}
-    vim/bundle/cucumber      {git https://github.com/tpope/vim-cucumber.git}
-    vim/bundle/dispatch      {git https://github.com/tpope/vim-dispatch.git}
     vim/bundle/dosbatch-indent \
         {git https://github.com/vim-scripts/dosbatch-indent}
     vim/bundle/golang        {git https://github.com/jnwhiteh/vim-golang}
     vim/bundle/markdown      \
         {git https://github.com/plasticboy/vim-markdown.git}
-    vim/bundle/neocomplete   {git https://github.com/Shougo/neocomplete.vim.git}
     vim/bundle/nerdtree      {git https://github.com/scrooloose/nerdtree}
-    vim/bundle/omnisharp     {git https://github.com/nosami/Omnisharp.git true}
     vim/bundle/pathogen      {git https://github.com/tpope/vim-pathogen}
     vim/bundle/scratch       {git https://github.com/vim-scripts/scratch.vim}
-    vim/bundle/supertab      {git https://github.com/ervandew/supertab.git}
     vim/bundle/zenburn       {git https://github.com/jnurmine/Zenburn}
 }
 
