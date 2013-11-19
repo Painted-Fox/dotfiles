@@ -1,7 +1,11 @@
 set background=dark
 colors zenburn
 
-set guifont="Source Code Pro Medium 11"
+if has("gui_win32")
+    set guifont=Source_Code_Pro:h11,Consolas:h11
+else
+    set guifont="Source Code Pro Medium 11"
+endif
 set columns=80 lines=50
 set guicursor+=a:blinkon0
 set guioptions=aigm
