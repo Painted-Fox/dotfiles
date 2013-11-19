@@ -25,3 +25,7 @@ fi
 if [ -d "$HOME/dockerfiles/bin" ] ; then
     PATH="$HOME/dockerfiles/bin:$PATH"
 fi
+
+# Set the GOPATH and add the GOPATH/bin to the PATH
+GOPATH="$HOME/gocode"
+PATH="$GOPATH/bin:$PATH"
