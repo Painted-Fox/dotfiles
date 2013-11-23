@@ -255,11 +255,10 @@ filetype plugin indent on
 " Section: Color and syntax {{{1
 "--------------------------------------------------------------------------
 
-" Helper to initialize Zenburn colors in 256-color mode.
-function! ColorTermZenburn()
-  colorscheme zenburn
-  highlight Normal ctermbg=234
-  let g:zenburn_high_Contrast = 1
+" Helper to initialize colors in 256-color mode.
+function! ColorTerm()
+  set background=dark
+  colorscheme solarized
 endfunction
 
 " Make sure colored syntax mode is on, and make it Just Work with newer 256
@@ -267,7 +266,7 @@ endfunction
 if !has('gui_running')
   if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
     set t_Co=256
-    call ColorTermZenburn()
+    call ColorTerm()
   elseif has("terminfo")
     colorscheme default
     set t_Co=8
