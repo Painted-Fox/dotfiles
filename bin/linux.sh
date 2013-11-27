@@ -24,9 +24,10 @@ dot_link "vim/vimrc"         ".vimrc"
 dot_link "vim/gvimrc"        ".gvimrc"
 
 # Install shell dotfiles.
-dot_link "shell/profile"      ".profile"
-dot_link "shell/bashrc"       ".bashrc"
-dot_link "shell/bash_aliases" ".bash_aliases"
+dot_link "shell/pam_environment"    ".pam_environment"
+dot_link "shell/profile"            ".profile"
+dot_link "shell/bashrc"             ".bashrc"
+dot_link "shell/bash_aliases"       ".bash_aliases"
 
 # Install dircolors-solarized
 dot_link "dircolors-solarized/dircolors.256dark" ".dircolors"

@@ -1,0 +1,4 @@
+#GOPATH=${HOME}/gocode
+#PATH=${GOPATH}/bin:${HOME}/bin:$PATH
+GOPATH      DEFAULT=${HOME}/gocode
+PATH        DEFAULT=${GOPATH}/bin:${HOME}/bin:${PATH}
