@@ -32,11 +32,6 @@ dot_link "shell/bash_aliases"       ".bash_aliases"
 # Install dircolors-solarized
 dot_link "dircolors-solarized/dircolors.256dark" ".dircolors"
 
-if [ $( ls -1 "$dot/vim/bundle/" | wc -l ) -le 1 ]; then
-  echo "Installing: Vim Bundles"
-  vim +BundleInstall! +BundleClean +qall
-fi
-
 dot_link "gemrc"             ".gemrc"
 dot_link "gitconfig"         ".gitconfig"
 dot_link "hgrc"              ".hgrc"
