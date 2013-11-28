@@ -5,13 +5,10 @@
 # Abort the script if a command fails.
 set -e
 
-# Script dir.
-dir=$( cd -P "$( dirname $0 )" && pwd )
-# dotfiles dir.
-dot=$( cd -P ${dir}/.. && pwd )
+# dotfiles dir = Script dir.
+dot=$( cd -P "$( dirname $0 )" && pwd )
 
-echo "dir: ${dir}"
-echo "dot: ${dot}"
+echo "Dotfiles: ${dot}"
 echo "HOME: ${HOME}"
 
 function dot_link {
