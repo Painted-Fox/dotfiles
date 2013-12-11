@@ -14,3 +14,8 @@ fi
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
+
+# Docker aliases
+alias dkr-clean='docker rm $(docker ps -a | grep "Exit" | cut --bytes=-13)'
+alias dkr-image-clean='docker rmi $(docker images | grep "<none>" | grep -o -E "[a-z0-9]{12}")'
+alias dkr-bash='docker run -t -i -entrypoint="/bin/bash"'
