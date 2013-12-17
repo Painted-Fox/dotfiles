@@ -15,7 +15,15 @@ alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 
+# Force Tmux to use 256 colors and use UTF-8 encoding.
+alias tmux='tmux -2 -u'
+
 # Docker aliases
 alias dkr-clean='docker rm $(docker ps -a | grep "Exit" | cut --bytes=-13)'
 alias dkr-image-clean='docker rmi $(docker images | grep "<none>" | grep -o -E "[a-z0-9]{12}")'
 alias dkr-bash='docker run -t -i -entrypoint="/bin/bash"'
+
+# RDP session aliases
+alias rdp-build-agent="xfreerdp -d BN -u ryan.seto -g 1270x972 -z --ignore-certificate --plugin cliprdr --plugin rdpdr --data disk:proj:$HOME/proj -- 192.168.4.123"
+alias rdp-ci="xfreerdp -d BN -u ryan.seto -g 1270x972 -z --ignore-certificate --plugin cliprdr --plugin rdpdr --data disk:proj:$HOME/proj -- 192.168.4.184"
+alias rdp-qa="xfreerdp -d BN -u ryan.seto -g 1270x972 -z --ignore-certificate --plugin cliprdr --plugin rdpdr --data disk:proj:$HOME/proj -- 192.168.4.195"
