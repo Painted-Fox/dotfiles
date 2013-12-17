@@ -1,2 +1,3 @@
 GOPATH      DEFAULT=${HOME}/gocode
 PATH        DEFAULT=${GOPATH}/bin:${HOME}/dotfiles/bin:${PATH}
+MOSH_PREDICTION_DISPLAY DEFAULT=never
