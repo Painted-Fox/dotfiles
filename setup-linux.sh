@@ -34,4 +34,7 @@ dot_link "gitconfig"         ".gitconfig"
 dot_link "hgrc"              ".hgrc"
 dot_link "kdiff3rc"          ".kdiff3rc"
 dot_link "tmux.conf"         ".tmux.conf"
-dot_link "i3"                ".i3"
+
+mkdir -p "${HOME}/.config"
+dot_link "i3config/i3"       ".config/i3"
+dot_link "i3config/i3status" ".config/i3status"
