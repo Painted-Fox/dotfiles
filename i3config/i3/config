@@ -153,3 +153,4 @@ bar {
 # AUTOSTART
 exec ~/.dropbox-dist/dropboxd
 exec --no-startup-id gnome-sound-applet
+exec --no-startup-id nm-applet
