@@ -154,3 +154,6 @@ bar {
 exec ~/.dropbox-dist/dropboxd
 exec --no-startup-id gnome-sound-applet
 exec --no-startup-id nm-applet
+
+# From RD
+bindsym $mod+Control+l exec i3lock -c 111111 -n
