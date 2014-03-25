@@ -7,7 +7,7 @@ if filereadable(expand("~/.gvimrc"))
 endif
 
 " VSVim specific settings.
-set shiftwidth=4                " use indents of 2 spaces
-set tabstop=4                   " an indentation every four columns
+set shiftwidth=4                " use indents of 4 spaces
+set tabstop=4                   " an intdentation every 4 columns
 set softtabstop=4               " let backspace delete indent
-set expandtab                   " Convert tabs to spaces.
+set noexpandtab                 " Do NOT convert tabs to spaces.
