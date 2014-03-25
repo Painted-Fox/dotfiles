@@ -6,104 +6,43 @@
 # Borrowed from the article "Vim After 11 years" by Ian Langworth
 # https://github.com/statico/dotfiles/blob/master/.vim/update.sh
 
-set dotdir [file normalize [file dirname $argv0]]
-set cwd [pwd]
+set dot_dir [file normalize [file dirname $argv0]]
+set packages_config "$dot_dir/packages.config"
 
-# List of directories to clean.
-set clean_dirs {
-    vim/bundle
-    dircolors-solarized
-    hgext
-}
+set git "git"
+set hg "hg"
+# TODO
+# Disable mods that we don't have yet.
+#set config {}
+#foreach {dir remote} [array get hgext] {
+#    set extension [lindex [split $dir /] 1]
+#    lappend config --config "extensions.$extension=!"
+#}
 
-array set vim {
-    vim/bundle/airline       {git https://github.com/bling/vim-airline}
-    vim/bundle/dosbatch-indent \
-        {git https://github.com/vim-scripts/dosbatch-indent}
-    vim/bundle/golang        {git https://github.com/jnwhiteh/vim-golang}
-    vim/bundle/markdown      \
-        {git https://github.com/plasticboy/vim-markdown.git}
-    vim/bundle/nerdtree      {git https://github.com/scrooloose/nerdtree}
-    vim/bundle/pathogen      {git https://github.com/tpope/vim-pathogen}
-    vim/bundle/scratch       {git https://github.com/vim-scripts/scratch.vim}
-    vim/bundle/solarized     \
-        {git https://github.com/altercation/vim-colors-solarized}
-}
-
-array set hgext {
-    hgext/machina   {hg https://bitbucket.org/Painted-Fox/mercurial-machina}
-    hgext/rsync     {hg https://bitbucket.org/Painted-Fox/hg-rsync}
-    hgext/rupdate   {hg https://bitbucket.org/Painted-Fox/rupdate}
-}
-
-array set misc {
-    dircolors-solarized {git https://github.com/seebi/dircolors-solarized}
-}
-
-# Pulls and updates to the latest change.
-proc pull {vcs dir submod} {
-    cd $dir
-
-    if {[string equal $vcs git]} {
-        run "$vcs pull origin master"
-
-        if {$submod} {
-            run "$vcs submodule update"
-        }
-    } elseif {[string equal $vcs hg]} {
-        run "$vcs pull -u"
-    }
-}
-
-# Cleans the directories
-proc clean {} {
-    global dotdir clean_dirs
-    foreach {dir} $clean_dirs {
-        file delete -force "$dotdir/$dir"
-    }
+# Cleans a directory
+proc clean {dest} {
+    file delete -force "$dest"
 }
 
 # Clones the repository.
-proc clone {vcs url dest submod} {
-    global hgext
+proc clone {dest vcs url} {
+    global hg git
 
-    if {[string equal $vcs hg]} {
-        # Disable mods that we don't have yet.
-        set config {}
-        foreach {dir remote} [array get hgext] {
-            set extension [lindex [split $dir /] 1]
-            lappend config --config "extensions.$extension=!"
+    switch $vcs {
+        git {
+            run "$git clone $url $dest"
         }
-
-        run "$vcs clone $config $url $dest"
-    } else {
-        run "$vcs clone $url $dest"
-    }
-
-    if {[string equal $vcs git] && $submod} {
-        cd $dest
-        run "$vcs submodule update --init"
-    }
-}
-
-proc updategroup {group} {
-    global vim hgext misc dotdir
-    foreach {dir remote} [array get $group] {
-        set vcs [lindex $remote 0]
-        set url [lindex $remote 1]
-        set dest "$dotdir/$dir"
-
-        # Do I have submodules?
-        set submod [expr {[llength $remote] > 2 && [lindex $remote 2]}]
-
-        if {[file exists "$dest/.$vcs"]} {
-            pull $vcs $dest $submod
-        } else {
-            clone $vcs $url $dest $submod
+        hg {
+            run "$hg clone $url $dest"
+        }
+        default {
+            puts "Unkown version control system: $vcs"
+            exit 1
         }
     }
 }
 
+# Runs a command.
 proc run {cmd} {
     if {[catch {exec {*}[split $cmd " "]} results options]} {
         set details [dict get $options -errorcode]
@@ -117,7 +56,15 @@ proc run {cmd} {
     }
 }
 
-clean
-updategroup vim
-updategroup hgext
-updategroup misc
+set packages_file [open $packages_config r]
+set packages [read $packages_file]
+close $packages_file
+foreach pkg [split $packages "\n"] {
+    if {[llength $pkg] == 0} { continue }
+    set dest "$dot_dir/[lindex $pkg 0]"
+    set vcs [lindex $pkg 1]
+    set url [lindex $pkg 2]
+
+    clean $dest
+    clone $dest $vcs $url
+}
