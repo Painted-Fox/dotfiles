@@ -13,6 +13,9 @@ mklink "%HOME%\.hgrc" "%DOT%\hgrc"
 echo "Linking git configuration."
 mklink "%HOME%\.gitconfig" "%DOT%\gitconfig"
 
+echo "Linking gemrc."
+mklink "%HOME%\.gemrc" "%DOT%\gemrc"
+
 echo "Linking kdiff3 configuration."
 mklink "%HOME%\.kdiff3rc" "%DOT%\kdiff3rc"
 
