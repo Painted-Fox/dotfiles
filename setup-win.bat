@@ -19,6 +19,9 @@ mklink "%HOME%\.gemrc" "%DOT%\gemrc"
 echo "Linking kdiff3 configuration."
 mklink "%HOME%\.kdiff3rc" "%DOT%\kdiff3rc"
 
+echo "Linking Ag, the Silver Search, configuration."
+mklink "%HOME%\.agignore" "%DOT%\agignore"
+
 echo "Linking KiTTY."
 mkdir "C:\tools\KiTTY"
 mklink /d "C:\tools\KiTTY\Sessions" "%DOT%\KiTTY\Sessions"
