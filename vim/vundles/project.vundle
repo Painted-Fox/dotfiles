@@ -1,2 +1,2 @@
-Bundle "jistr/vim-nerdtree-tabs.git"
-Bundle "scrooloose/nerdtree.git"
+Plugin 'jistr/vim-nerdtree-tabs.git'
+Plugin 'scrooloose/nerdtree.git'

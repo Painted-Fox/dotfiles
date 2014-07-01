@@ -1,3 +1,3 @@
-Bundle "plasticboy/vim-markdown.git"
-Bundle "kchmck/vim-coffee-script"
-Bundle "chase/vim-ansible-yaml.git"
+Plugin 'plasticboy/vim-markdown.git'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'chase/vim-ansible-yaml.git'

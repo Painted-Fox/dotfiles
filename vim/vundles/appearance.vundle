@@ -1,4 +1,4 @@
-Bundle "altercation/vim-colors-solarized"
-Bundle "itchyny/lightline.vim"
-Bundle "junegunn/goyo.vim.git"
-Bundle "amix/vim-zenroom2.git"
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'itchyny/lightline.vim'
+Plugin 'junegunn/goyo.vim.git'
+Plugin 'amix/vim-zenroom2.git'
