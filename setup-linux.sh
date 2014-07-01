@@ -16,9 +16,8 @@ function dot_link {
 }
 
 # Install Vim dotfiles.
-dot_link "vim"               ".vim"
-dot_link "vim/vimrc"         ".vimrc"
-dot_link "vim/gvimrc"        ".gvimrc"
+dot_link "vim"		".vim"
+dot_link "vimrc"	".vimrc"
 
 # Install shell dotfiles.
 dot_link "shell/pam_environment"    ".pam_environment"

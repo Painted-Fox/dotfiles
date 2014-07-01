@@ -29,6 +29,4 @@ mklink "C:\tools\KiTTY\kitty.ini" "%DOT%\KiTTY\kitty.ini"
 
 echo "Linking Vim."
 mklink /d "%HOME%\.vim"  "%DOT%\vim"
-mklink "%HOME%\.vimrc"   "%DOT%\vim\vimrc"
-mklink "%HOME%\.gvimrc"  "%DOT%\vim\gvimrc"
-mklink "%HOME%\.vsvimrc" "%DOT%\vim\vsvimrc"
+mklink "%HOME%\.vimrc"   "%DOT%\vimrc"
