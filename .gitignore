@@ -1,6 +1,4 @@
 vim/bundle
-vim/tmp
-vim/undo
-vim/.netrwhist
+vim/backups
 hgext
 dircolors-solarized
