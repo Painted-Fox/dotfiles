@@ -1,1 +1,1 @@
-Plugin 'rking/ag.vim'
+Plugin 'Shougo/unite.vim'

@@ -6,10 +6,11 @@ nmap <Leader>e :NERDTreeTabsToggle<CR>
 " toggle with <Leader> + spacebar
 nnoremap <Leader><Space> :Goyo<CR>
 
-" ==== Ag
-" Open the Ag command and place the cursor into the quotes
-nmap <Leader>ag :Ag ""<Left>
-nmap <Leader>af :AgFile ""<Left>
+" === Unite
+" Search buffers with <Leader> + b
+nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec<cr>
+nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
+nnoremap <Leader>b :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 
 " ==== Navigation
 " Nav between open buffers.
