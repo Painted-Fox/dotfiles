@@ -3,7 +3,7 @@ nmap <Leader>q gqip
 
 " ==== NERD tree
 " toggle with <Leader> + e
-nmap <Leader>e :NERDTreeToggle<CR>
+nmap <Leader>e :NERDTreeTabsToggle<CR>
 
 " ==== Goyo
 " toggle with <Leader> + spacebar
