@@ -13,9 +13,9 @@ if has("gui_running")
   set columns=190
 
   if has("gui_win32")
-    set guifont=Source_Code_Pro:h11,Consolas:h11
+    set guifont=Source_Code_Pro:h14,Consolas:h14
   else
-    set guifont=Source\ Code\ Pro\ Medium\ 11,DejaVu\ Sans\ Mono\ 11
+    set guifont=Source\ Code\ Pro\ Medium\ 14,DejaVu\ Sans\ Mono\ 14
   endif
 else
   "dont load csapprox if we no gui support - silences an annoying warning
