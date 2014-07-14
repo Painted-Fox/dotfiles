@@ -29,7 +29,7 @@ runtime vim-improvements.vundle
 
 " The plugins listed in ~/.vim/.vundles.local will be added here to
 " allow the user to add vim plugins to yadr without the need for a fork.
-if filereadable(expand("~/.yadr/vim/.vundles.local"))
+if filereadable(expand("~/dotfiles/vim/.vundles.local"))
   source ~/dotfiles/vim/.vundles.local
 endif
 call vundle#end()
