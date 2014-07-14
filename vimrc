@@ -34,6 +34,12 @@ syntax on
 " the plugins.
 let mapleader=","
 
+" ================ File Encoding ========================
+" Use UTF-8 by default.
+set encoding=utf-8
+" Read the byte-order mark, if one exists.
+set fileencodings=ucs-bom,utf-8,ucs-2le,latin1
+
 " =============== Vundle Initialization ===============
 " This loads all the plugins specified in ~/.vim/vundle.vim
 " Use Vundle plugin to manage all other plugins

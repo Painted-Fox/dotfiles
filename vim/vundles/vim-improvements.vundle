@@ -1,1 +1,2 @@
 Plugin 'vim-scripts/scratch.vim'
+Plugin 's3rvac/AutoFenc'
