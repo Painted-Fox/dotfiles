@@ -12,6 +12,10 @@ nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file
 nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
 nnoremap <Leader>b :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 
+" ==== LanguageTool
+nnoremap <Leader>l :LanguageToolCheck<CR>
+nnoremap <Leader>L :LanguageToolClear<CR>
+
 " ==== Navigation
 " Nav between open buffers.
 map <C-n> :bnext<CR>
