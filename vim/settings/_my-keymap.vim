@@ -16,6 +16,11 @@ nnoremap <Leader>b :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 nnoremap <Leader>l :LanguageToolCheck<CR>
 nnoremap <Leader>L :LanguageToolClear<CR>
 
+" ==== Editing
+" Stay in visual mode when shifting indent.
+:vmap < <gv
+:vmap > >gv
+
 " ==== Navigation
 " Nav between open buffers.
 map <C-n> :bnext<CR>
