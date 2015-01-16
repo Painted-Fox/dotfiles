@@ -22,10 +22,11 @@ mklink "%HOME%\.kdiff3rc" "%DOT%\kdiff3rc"
 echo "Linking Ag, the Silver Search, configuration."
 mklink "%HOME%\.agignore" "%DOT%\agignore"
 
-echo "Linking KiTTY."
-mkdir "C:\tools\KiTTY"
-mklink /d "C:\tools\KiTTY\Sessions" "%DOT%\KiTTY\Sessions"
-mklink "C:\tools\KiTTY\kitty.ini" "%DOT%\KiTTY\kitty.ini"
+:: Disable KiTTY for now.
+::echo "Linking KiTTY."
+:: mkdir "C:\tools\KiTTY"
+:: mklink /d "C:\tools\KiTTY\Sessions" "%DOT%\KiTTY\Sessions"
+:: mklink "C:\tools\KiTTY\kitty.ini" "%DOT%\KiTTY\kitty.ini"
 
 echo "Linking Vim."
 mklink /d "%HOME%\.vim"  "%DOT%\vim"
