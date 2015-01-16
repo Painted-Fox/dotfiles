@@ -1,45 +1,44 @@
 #!/bin/bash
 #
 # Updates external repositories.
-#
-# Borrowed from the article "Vim After 11 years" by Ian Langworth
-# https://github.com/statico/dotfiles/blob/master/.vim/update.sh
 
 set -e
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-GIT="$( which git )"
-
 # Run mercurial with the extensions we will install disabled.
-HG="$( which hg ) $(sed -n '/^hgext/s/^hgext\/\(\w*\).*$/--config extensions.\1=!/p' packages.config | tr '\n' ' ')"
+HG="$(sed -n '/^hgext/s/^hgext\/\(\w*\).*$/--config extensions.\1=!/p' packages.config | tr '\n' ' ')"
 
 clean() {
-    # $1 = dest
-    rm -rf $1
+    local dest=$1
+    rm -rf $dest
 }
 
 clone() {
-    # $1 = dest
-    # $2 = vcs
-    # $3 = url
-    case "$2" in
-        git)
-            $GIT clone $3 $1
-            ;;
-        hg)
-            $HG clone $3 $1
-            ;;
-        *)
-            echo "Unknown version control system: $2"
-            exit 1
-    esac
+  local dest=$1
+  local vcs=$2
+  local url=$3
+  case "$vcs" in
+    git)
+      git clone $url $dest
+      ;;
+    hg)
+      hg $HG clone $url $dest
+      ;;
+    *)
+      echo "Unknown version control system: $vcs"
+      exit 1
+  esac
 }
 
-while read package; do
-    dest=$DIR/$(echo $package | tr -s ' ' | cut -d ' ' -f 1)
+main() {
+  local dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+  while read package; do
+    dest=$dir/$(echo $package | tr -s ' ' | cut -d ' ' -f 1)
     vcs=$(echo $package | tr -s ' ' | cut -d ' ' -f 2)
     url=$(echo $package | tr -s ' ' | cut -d ' ' -f 3)
 
     clean $dest
     clone $dest $vcs $url
-done < $DIR/packages.config
+  done < $dir/packages.config
+}
+main
