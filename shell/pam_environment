@@ -1,3 +1,5 @@
-GOPATH      DEFAULT=${HOME}/gocode
-PATH        DEFAULT=${GOPATH}/bin:${HOME}/dotfiles/bin:${PATH}
+GOPATH       DEFAULT=${HOME}/gocode
+PATH         DEFAULT=${GOPATH}/bin:${HOME}/dotfiles/bin:${PATH}
+WORKON_HOME  DEFAULT=${HOME}/.virtualenvs
+PROJECT_HOME DEFAULT=${HOME}/proj
 MOSH_PREDICTION_DISPLAY DEFAULT=never
