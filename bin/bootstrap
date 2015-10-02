@@ -16,11 +16,11 @@ dotfilesets = {
         ("vim/vimrc",                    ".vimrc"),
     ],
     "unix": [
-        ("environment/pam_environment"   ".pam_environment"),
-        ("environment/profile"           ".profile"),
-        ("bash/bashrc"                   ".bashrc"),
-        ("bash/bash_aliases"             ".bash_aliases"),
-        ("tmux/tmux.conf"                ".tmux.conf"),
+        ("environment/pam_environment",  ".pam_environment"),
+        ("environment/profile",          ".profile"),
+        ("bash/bashrc",                  ".bashrc"),
+        ("bash/bash_aliases",            ".bash_aliases"),
+        ("tmux/tmux.conf",               ".tmux.conf"),
     ],
     "windows": [
         ("vim/vsvimrc",                  ".vsvimrc"),
@@ -57,7 +57,14 @@ if __name__ == "__main__":
     hg_git_dst = os.path.join(home, "lib/hg/hg-git")
     if not os.path.isdir(hg_git_dst):
         hg_git_url = "https://bitbucket.org/durin42/hg-git/"
-        subprocess.call(["hg", "clone", hg_git_url, hg_git_dst])
+        subprocess.call([
+            "hg",
+            "--config",
+            "extensions.hggit=!",
+            "clone",
+            hg_git_url,
+            hg_git_dst,
+        ])
 
     link_set(dotfilesets["common"])
     if os.name == "posix":
