@@ -2,26 +2,18 @@
 username = Ryan Seto <mr.werewolf@gmail.com>
 
 [extensions]
-hgext.bookmarks =
-hgext.color =
-hgext.fetch =
-hgext.graphlog =
-hgext.mq =
-hgext.pager =
-hgext.progress =
-hgext.purge =
-hgext.rebase =
-hgext.record =
-hgext.share =
-
-# Mercurial Machina (https://bitbucket.org/Sly-Fox/mercurial-machina/wiki/Home)
-machina = ~/dotfiles/hgext/machina
-
-# Mercurial remote sync (https://bitbucket.org/Sly-Fox/hg-rsync)
-rsync = ~/dotfiles/hgext/rsync/hg-rsync.py
-
-# Remote update (https://bitbucket.org/Sly-Fox/rupdate/wiki/Home)
-rupdate = ~/dotfiles/hgext/rupdate
+bookmarks =
+color =
+fetch =
+graphlog =
+mq =
+pager =
+progress =
+purge =
+rebase =
+record =
+share =
+hggit = ~/lib/hg/hg-git/hggit
 
 [diff]
 git = True
