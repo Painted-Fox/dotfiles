@@ -1,0 +1,68 @@
+#!/usr/bin/env python
+# Requires Python 3.2 or greater on Windows for os.symlink() to work.
+
+import os
+import subprocess
+
+home = os.path.expanduser("~")
+dot = os.path.join(home, "lib/dotfiles")
+
+dotfilesets = {
+    "common": [
+        ("git/gitconfig",                ".gitconfig"),
+        ("kdiff3/kdiff3rc",              ".kdiff3rc"),
+        ("the_silver_searcher/agignore", ".agignore"),
+        ("vim",                          ".vim"),
+        ("vim/vimrc",                    ".vimrc"),
+    ],
+    "unix": [
+        ("environment/pam_environment"   ".pam_environment"),
+        ("environment/profile"           ".profile"),
+        ("bash/bashrc"                   ".bashrc"),
+        ("bash/bash_aliases"             ".bash_aliases"),
+        ("tmux/tmux.conf"                ".tmux.conf"),
+    ],
+    "windows": [
+        ("vim/vsvimrc",                  ".vsvimrc"),
+    ],
+}
+
+def ensure_link(src, dst):
+    src = os.path.join(dot, src)
+    dst = os.path.join(home, dst)
+
+    if not os.path.islink(dst):
+        os.symlink(src, dst)
+
+
+def ensure_dir(path):
+    path = os.path.join(home, path)
+
+    if not os.path.isdir(path):
+        os.makedirs(path)
+
+
+def link_set(dotfileset):
+    for item in dotfileset:
+        ensure_link(item[0], item[1])
+
+
+if __name__ == "__main__":
+    print("prerequisites: python git hg dulwich")
+
+    ensure_dir("lib/hg")
+    ensure_dir("src")
+    ensure_link("mercurial/hgrc", ".hgrc")
+
+    hg_git_dst = os.path.join(home, "lib/hg/hg-git")
+    if not os.path.isdir(hg_git_dst):
+        hg_git_url = "https://bitbucket.org/durin42/hg-git/"
+        subprocess.call(["hg", "clone", hg_git_url, hg_git_dst])
+
+    link_set(dotfilesets["common"])
+    if os.name == "posix":
+        link_set(dotfilesets["unix"])
+    elif os.name == "nt":
+        link_set(dotfilesets["windows"])
+
+    print("Completed")
