@@ -1,6 +1,0 @@
-[
-  { "keys": ["ctrl+alt+r"],
-    "command":"pandoc_render",
-    "args":{"target":"html"},
-    "context":[{"key": "selector", "operator": "equal", "operand": "text.html.markdown" }]}
-]
