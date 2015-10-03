@@ -1,6 +1,0 @@
-Plugin 'vim-scripts/LanguageTool'
-Plugin 'plasticboy/vim-markdown.git'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'chase/vim-ansible-yaml.git'
-Plugin 'OrangeT/vim-csharp'
-Plugin 'PProvost/vim-ps1.git'
