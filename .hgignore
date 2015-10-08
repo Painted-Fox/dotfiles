@@ -1,4 +1,5 @@
 syntax: glob
 
+vim/.netrwhist
 vim/plugged
 vim/tmp
