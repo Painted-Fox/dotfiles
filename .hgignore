@@ -1,4 +1,4 @@
 syntax: glob
 
-vim/bundle
+vim/plugged
 vim/tmp

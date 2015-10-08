@@ -1,42 +1,35 @@
 set nocompatible
 
-"turn on syntax highlighting
-syntax on
-
 " Map the <leader> to the space-bar.
-" Should be set before Vundle is initialized.
+" Should be set before plugins are initialized.
 let mapleader = "\<Space>"
 
 
-" ======== File Encoding ====
-" Use UTF-8 by default.
-set encoding=utf-8
-" Read the byte-order mark, if one exists.
-set fileencodings=ucs-bom,utf-8,ucs-2le,latin1
+" Plug -----------------------------------------------------------------------
+call plug#begin()
+
+" Defaults everyone can agree on
+Plug 'tpope/vim-sensible'
+" Surround text with parentheses, brackets, quotes, XML tags, and more
+Plug 'tpope/vim-surround'
+" lean & mean status/tabline for vim that's light as air
+Plug 'bling/vim-airline'
+
+call plug#end()
 
 
-" ======== Vundle ====
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" My plugins.
-Plugin 'tpope/vim-surround'
-
-call vundle#end()
-filetype plugin indent on
+" Airline --------------------------------------------------------------------
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'hybridline'
 
 
-" ======== Turn Off Swap Files ====
+" Turn Off Swap Files --------------------------------------------------------
 set noswapfile
 set nobackup
 set nowb
 
 
-" ======== Persistent Undo ====
+" Persistent Undo ------------------------------------------------------------
 " Keep undo history across sessions, by storing in file.
 if has('persistent_undo')
   silent !mkdir ~/.vim/tmp > /dev/null 2>&1
@@ -45,10 +38,8 @@ if has('persistent_undo')
 endif
 
 
-" ======== Indentation ====
-set autoindent
+" Indentation ----------------------------------------------------------------
 set smartindent
-set smarttab
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
@@ -57,22 +48,19 @@ set expandtab
 filetype plugin on
 filetype indent on
 
-" Display tabs and trailing spaces visually
-set list listchars=tab:»·,trail:·
-
 set nowrap      "Don't wrap lines
 set linebreak   "Wrap lines at convenient points
 
 
-" ======== Folds ====
-set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
+" Folds ----------------------------------------------------------------------
 set nofoldenable        "don't fold by default
 
-" ======== General Configuration ====
+
+" General Configuration ------------------------------------------------------
 set visualbell  "Don't sound the bell
 
-" ======== Mappings ====
+
+" Mappings -------------------------------------------------------------------
 inoremap jk <ESC>
 " Fix spelling with <leader>f
 nnoremap <leader>f 1z=

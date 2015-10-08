@@ -17,8 +17,8 @@ dotfiles configure.
 * **[Mercurial][hg]** (also known as the command `hg`) is needed to get the
   dotfiles themselves.  [TortoiseHg][thg] is highly recommended for Windows and
   comes with dulwich.
-* **[Git][git]** is needed to grab some of the subrepositories.  See `.hgsub`
-  for a list.
+* **[Git][git]** is needed to grab git subrepositories listed in `.hgsub` (if
+  it exists).  It's also required to install Vim plugins.
 * **[Python][py]** is needed to run the `bin/bootstrap` script.  Version 3.2 or
   higher is required on Windows.
 * **[dulwich][dulwich]** is a python library that provides an interface to git
@@ -48,7 +48,7 @@ ssh...
 
     hg clone https://Painted-Fox@bitbucket.org/Painted-Fox/dotfiles ~/lib/dotfiles
 
-## Installing
+## Installing the Dotfiles
 
 On Linux, run the following command in the terminal:
 
@@ -58,3 +58,13 @@ On Windows, run a command prompt as administrator and run the following
 (assuming `python` is in your PATH):
 
     python %USERPROFILE%\lib\dotfiles\bin\bootstrap
+
+## Installing Vim Plugins
+
+After installing the dotfiles, the next step is usually to install Vim plugins.
+I use [vim-plug][vim-plug], a minimalist Vim plugin manager.  To install the
+plugins, run Vim and run the following command within Vim:
+
+    :PlugInstall
+
+[vim-plug]: https://github.com/junegunn/vim-plug
