@@ -70,6 +70,8 @@ filetype indent on
 set nowrap      "Don't wrap lines
 set linebreak   "Wrap lines at convenient points
 
+set list listchars=tab:→\ ,trail:·,extends:…,precedes:…
+
 
 " Folds ----------------------------------------------------------------------
 set nofoldenable        "don't fold by default
