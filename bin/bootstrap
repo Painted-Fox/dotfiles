@@ -10,7 +10,7 @@ dot = os.path.join(home, "lib/dotfiles")
 dotfilesets = {
     "common": [
         ("git/gitconfig",                ".gitconfig"),
-        ("kdiff3/kdiff3rc",              ".kdiff3rc"),
+        ("kdiff3rc",                     ".kdiff3rc"),
         ("the_silver_searcher/agignore", ".agignore"),
         ("vim",                          ".vim"),
         ("vim/vimrc",                    ".vimrc"),
@@ -20,7 +20,8 @@ dotfilesets = {
         ("environment/profile",          ".profile"),
         ("bash/bashrc",                  ".bashrc"),
         ("bash/bash_aliases",            ".bash_aliases"),
-        ("tmux/tmux.conf",               ".tmux.conf"),
+        ("tmux.conf",                    ".tmux.conf"),
+        ("Xresources",                   ".Xresources"),
     ],
     "windows": [
         ("vim/vsvimrc",                  ".vsvimrc"),
