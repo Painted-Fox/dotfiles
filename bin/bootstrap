@@ -11,7 +11,7 @@ dotfilesets = {
     "common": [
         ("git/gitconfig",                ".gitconfig"),
         ("kdiff3rc",                     ".kdiff3rc"),
-        ("the_silver_searcher/agignore", ".agignore"),
+        ("agignore",                     ".agignore"),
         ("vim",                          ".vim"),
         ("vim/vimrc",                    ".vimrc"),
     ],
