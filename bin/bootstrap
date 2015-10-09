@@ -24,9 +24,14 @@ dotfilesets = {
         ("Xresources",                   ".Xresources"),
     ],
     "windows": [
+        ("vim",                          "vimfiles"),
         ("vim/vsvimrc",                  ".vsvimrc"),
     ],
 }
+
+# Help Python 2.x be compatible with Python 3.x
+try input = raw_input
+except NameError: pass
 
 def ensure_link(src, dst):
     src = os.path.join(dot, src)
@@ -35,7 +40,7 @@ def ensure_link(src, dst):
     if not os.path.islink(dst) and os.path.exists(dst):
         print("The destination for a symbolic link already exists.")
         print("Path: {0}".format(dst))
-        choice = raw_input("Would you like to overwrite it? (Y/n): ")
+        choice = input("Would you like to overwrite it? (Y/n): ")
         if choice == 'Y' or choice == 'y':
             os.remove(dst)
 
