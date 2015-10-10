@@ -1,0 +1,4 @@
+syntax: glob
+
+# Ignore output from nohup (Linux)
+nohup.out
