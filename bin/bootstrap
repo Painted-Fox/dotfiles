@@ -21,6 +21,7 @@ dotfilesets = {
         ("bash/bashrc",                  ".bashrc"),
         ("bash/bash_aliases",            ".bash_aliases"),
         ("tmux.conf",                    ".tmux.conf"),
+        ("w3m",                          ".w3m"),
         ("Xresources",                   ".Xresources"),
     ],
     "windows": [
@@ -42,7 +43,10 @@ def ensure_link(src, dst):
         print("Path: {0}".format(dst))
         choice = input("Would you like to overwrite it? (Y/n): ")
         if choice == 'Y' or choice == 'y':
-            os.remove(dst)
+            if os.path.isdir(dst):
+                os.rmdir(dst)
+            else:
+                os.remove(dst)
 
     if not os.path.islink(dst) and not os.path.exists(dst):
         os.symlink(src, dst)
