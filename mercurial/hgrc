@@ -1,5 +1,6 @@
 [ui]
 username = Ryan Seto <mr.werewolf@gmail.com>
+ignore = ~/lib/dotfiles/mercurial/hgignore_global
 
 [extensions]
 bookmarks =
