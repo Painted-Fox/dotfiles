@@ -18,6 +18,8 @@ Plug 'bling/vim-airline'
 Plug 'junegunn/goyo.vim'
 " Rethinking Vim as a tool for writing
 Plug 'reedes/vim-pencil'
+" Simple tmux statusline generator
+Plug 'edkolev/tmuxline.vim'
 
 
 call plug#end()
@@ -26,6 +28,8 @@ call plug#end()
 " Airline --------------------------------------------------------------------
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'hybridline'
+" Disable airline-tmuxline so it doesn't overwrite the theme.
+let g:airline#extensions#tmuxline#enabled = 0
 
 
 " Goyo -----------------------------------------------------------------------

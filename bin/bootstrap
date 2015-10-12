@@ -20,7 +20,7 @@ dotfilesets = {
         ("environment/profile",          ".profile"),
         ("bash/bashrc",                  ".bashrc"),
         ("bash/bash_aliases",            ".bash_aliases"),
-        ("tmux.conf",                    ".tmux.conf"),
+        ("tmux/tmux.conf",               ".tmux.conf"),
         ("w3m",                          ".w3m"),
         ("Xresources",                   ".Xresources"),
     ],
