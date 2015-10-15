@@ -25,7 +25,10 @@ Plug 'reedes/vim-pencil'
 Plug 'edkolev/tmuxline.vim'
 " A dark color scheme for Vim & gVim
 Plug 'w0ng/vim-hybrid'
-
+" EditorConfig plugin for Vim
+Plug 'editorconfig/editorconfig-vim'
+" fugitive.vim: a Git wrapper so awesome, it should be illegal
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -57,6 +60,11 @@ if !empty(glob("~/.vim/plugged/vim-hybrid"))
     set background=dark
     colorscheme hybrid
 endif
+
+
+" EditorConfig ---------------------------------------------------------------
+" Ensure that EditorConfig plays wiell with Tim Pope's fugitive.
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 
 " Turn Off Swap Files --------------------------------------------------------
