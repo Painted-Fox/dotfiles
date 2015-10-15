@@ -122,6 +122,8 @@ if has('gui_running')
     set columns=190   " Set width in columns
     if has('gui_win32')
         set guifont=Hack:h14:cANSI
+    else
+        set guifont=Hack\ 14
     endif
 
     " Automatically adjust the font size.  This is called later so we can use
