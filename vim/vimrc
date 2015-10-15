@@ -20,6 +20,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'reedes/vim-pencil'
 " Simple tmux statusline generator
 Plug 'edkolev/tmuxline.vim'
+" A dark color scheme for Vim & gVim
+Plug 'w0ng/vim-hybrid'
 
 
 call plug#end()
@@ -44,6 +46,14 @@ augroup pencil
     autocmd!
     autocmd FileType markdown call pencil#init()
 augroup END
+
+
+" Hybrid Colorscheme ---------------------------------------------------------
+let g:hybrid_use_Xresources = 1
+if !empty("~/.vim/plugged/vim-hybrid")
+    set background=dark
+    colorscheme hybrid
+endif
 
 
 " Turn Off Swap Files --------------------------------------------------------
