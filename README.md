@@ -14,11 +14,11 @@ Before installing the dotfiles, there are some prerequisites.  These are just
 prerequisites for installing the dotfiles, not a list of all the tools the
 dotfiles configure.
 
-* **[Mercurial][hg]** (also known as the command `hg`) is needed to get the
-  dotfiles themselves.  [TortoiseHg][thg] is highly recommended for Windows and
+* **[Git][git]** is needed to grab the dotfiles themselves.  It's also required
+  to install Vim plugins.
+* **[Mercurial][hg]** (also known as the command `hg`) is used to retrieve
+  Mercurial extentions.  [TortoiseHg][thg] is highly recommended for Windows and
   comes with dulwich.
-* **[Git][git]** is needed to grab git subrepositories listed in `.hgsub` (if
-  it exists).  It's also required to install Vim plugins.
 * **[Python][py]** is needed to run the `bin/bootstrap` script.  Version 3.2 or
   higher is required on Windows.
 * **[dulwich][dulwich]** is a python library that provides an interface to git
@@ -42,11 +42,11 @@ On Ubuntu, run the following to install prerequisites:
 My dotfiles expect to be saved to `~/lib/dotfiles` and they can be retrieved via
 ssh...
 
-    hg clone ssh://hg@bitbucket.org/Painted-Fox/dotfiles ~/lib/dotfiles
+    git clone git@github.com:Painted-Fox/dotfiles.git ~/lib/dotfiles
 
 ...or via https:
 
-    hg clone https://Painted-Fox@bitbucket.org/Painted-Fox/dotfiles ~/lib/dotfiles
+    git clone https://github.com/Painted-Fox/dotfiles.git ~/lib/dotfiles
 
 ## Installing the Dotfiles
 
