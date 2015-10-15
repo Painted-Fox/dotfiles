@@ -1,5 +1,8 @@
 set nocompatible
 
+" Let vim know we're using utf-8 for this script.
+scriptencoding utf-8
+
 " Map the <leader> to the space-bar.
 " Should be set before plugins are initialized.
 let mapleader = "\<Space>"
@@ -93,6 +96,38 @@ set nofoldenable        "don't fold by default
 
 " General Configuration ------------------------------------------------------
 set visualbell  "Don't sound the bell
+
+
+" GUI Configuration ----------------------------------------------------------
+function! s:AdjustFontSize()
+    " This function helps checks if we have a small screen by checking if the
+    " column size is smaller than expected.  If the screen is small, decrease
+    " the font by 2.
+    if &columns < 190
+        let l:fsize = substitute(&guifont, '^.*:h\([^:,]*\).*$', '\1', '')
+        let l:fsize -= 2
+        let l:guifont = substitute(&guifont, ':h\([^:,]*\)', ':h' . l:fsize, 'g')
+        let &guifont = l:guifont
+    endif
+endfunction
+
+if has('gui_running')
+    set guioptions-=r " Remove right-hand scroll bar
+    set guioptions-=L " Remove left-hand scroll bar
+
+    set guioptions-=T " Remove the toolbar
+    set guioptions-=m " Remove the menu bar
+
+    set lines=60      " Set height in lines
+    set columns=190   " Set width in columns
+    if has('gui_win32')
+        set guifont=Hack:h14:cANSI
+    endif
+
+    " Automatically adjust the font size.  This is called later so we can use
+    " the value of `columns` to detect screen size.
+    autocmd VimEnter * call s:AdjustFontSize()
+endif
 
 
 " Mappings -------------------------------------------------------------------
