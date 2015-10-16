@@ -5,6 +5,7 @@
 [core]
     autocrlf = input
     excludesfile = ~/lib/dotfiles/git/gitignore_global
+	trustctime = false
 
 [push]
     default = simple
