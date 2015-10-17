@@ -20,13 +20,27 @@ dotfilesets = {
         ("environment/profile",          ".profile"),
         ("bash/bashrc",                  ".bashrc"),
         ("bash/bash_aliases",            ".bash_aliases"),
+        ("fish/config.fish",             ".config/fish/config.fish"),
         ("tmux/tmux.conf",               ".tmux.conf"),
-        ("w3m",                          ".w3m"),
+        ("w3m/config",                   ".w3m/config"),
         ("Xresources",                   ".Xresources"),
     ],
     "windows": [
         ("vim",                          "vimfiles"),
         ("vim/vsvimrc",                  ".vsvimrc"),
+    ],
+}
+
+dirsets = {
+    "common": [
+        "lib/hg",
+        "src",
+    ],
+    "unix": [
+        ".config/fish",
+        ".w3m",
+    ],
+    "windows": [
     ],
 }
 
@@ -64,11 +78,20 @@ def link_set(dotfileset):
         ensure_link(item[0], item[1])
 
 
+def create_dir_set(dirset):
+    for item in dirset:
+        ensure_dir(item)
+
+
 if __name__ == "__main__":
     print("prerequisites: python git hg dulwich")
 
-    ensure_dir("lib/hg")
-    ensure_dir("src")
+    create_dir_set(dirsets["common"])
+    if os.name == "posix":
+        create_dir_set(dirsets["unix"])
+    elif os.name == "nt":
+        create_dir_set(dirsets["windows"])
+
     ensure_link("mercurial/hgrc", ".hgrc")
 
     hg_git_dst = os.path.join(home, "lib/hg/hg-git")

@@ -148,3 +148,9 @@ nnoremap <leader>f 1z=
 nnoremap <leader>s :set spell!<CR>
 " Toggle distraction-free mode
 nnoremap <leader>w :Goyo<CR>
+
+" Fugitive Shortcuts
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gs :Gstatus<CR>
+
