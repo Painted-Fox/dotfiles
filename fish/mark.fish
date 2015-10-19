@@ -9,7 +9,7 @@ function jump -d "Jumps to a marked directory."
 end
 
 # Add tab completion to the jump command.
-complete --command jump --exclusive --arguments (find $MARKPATH -type l -printf "%f ")
+complete -x -c jump -a "(find $MARKPATH -type l -printf '%f\n')"
 
 function mark -d "Mark a directory to be able to jump to it later."
     set -l mark_name $argv[1]
@@ -20,6 +20,9 @@ function unmark -d "Remove a mark."
     set -l to_unmark $argv[1]
     rm -i "$MARKPATH/$to_unmark"
 end
+
+# Add tab completion to the unmark command.
+complete -x -c unmark -a "(find $MARKPATH -type l -printf '%f\n')"
 
 function marks -d "List marks."
     ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g'; and echo
