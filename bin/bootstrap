@@ -12,6 +12,7 @@ dotfilesets = {
         ("git/gitconfig",                ".gitconfig"),
         ("kdiff3rc",                     ".kdiff3rc"),
         ("agignore",                     ".agignore"),
+        ("minttyrc",                     ".minttyrc"),
         ("vim",                          ".vim"),
         ("vim/vimrc",                    ".vimrc"),
     ],
