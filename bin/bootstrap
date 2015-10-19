@@ -39,6 +39,7 @@ dirsets = {
     ],
     "unix": [
         ".config/fish",
+        ".marks",
         ".w3m",
     ],
     "windows": [
