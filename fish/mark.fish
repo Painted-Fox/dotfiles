@@ -25,5 +25,9 @@ end
 complete -x -c unmark -a "(find $MARKPATH -type l -printf '%f\n')"
 
 function marks -d "List marks."
-    ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g'; and echo
+    set -l light_blue '\033[1;34m'
+    set -l light_cyan '\033[1;36m'
+    set -l reset '\033[0m'
+    set -l printf "$light_cyan%f$reset -> $light_blue%l$reset\n"
+    find "$MARKPATH" -maxdepth 1 -type l -printf $printf
 end
