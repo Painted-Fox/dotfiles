@@ -7,7 +7,7 @@ CursorType=Block
 
 
 Columns=190
-Rows=60
+Rows=50
 ScrollbackLines=10000
 Scrollbar=None
 
