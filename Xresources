@@ -55,7 +55,6 @@ URxvt*saveLines: 12000
 URxvt*scrollstyle:plain
 URxvt*scrollBar: false
 URxvt*cursorBlink: true
-URxvt*cursorUnderline: true
 
 ! urxvt tabs settings:
 
