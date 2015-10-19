@@ -29,6 +29,8 @@ Plug 'w0ng/vim-hybrid'
 Plug 'editorconfig/editorconfig-vim'
 " fugitive.vim: a Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
+" Vim support for editing fish scripts
+Plug 'dag/vim-fish'
 
 call plug#end()
 
