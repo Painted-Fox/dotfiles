@@ -1,1 +1,5 @@
-*.min.js
+**.min.js
+[Tt]emp/**
+[Tt]mp/**
+[Bb]in/**
+HostWeb/Scripts/*
