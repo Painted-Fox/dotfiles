@@ -40,6 +40,8 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'hybridline'
 " Disable airline-tmuxline so it doesn't overwrite the theme.
 let g:airline#extensions#tmuxline#enabled = 0
+" Enable tabline
+let g:airline#extensions#tabline#enabled = 1
 
 
 " Goyo -----------------------------------------------------------------------
