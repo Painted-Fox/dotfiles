@@ -2,4 +2,6 @@
 [Tt]emp/**
 [Tt]mp/**
 [Bb]in/**
-HostWeb/Scripts/*
+ln.advance.framework-default-*.js
+ln.advance.assets-default-*.js
+**tmp.json
