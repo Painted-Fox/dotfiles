@@ -31,6 +31,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 " Vim support for editing fish scripts
 Plug 'dag/vim-fish'
+" Mustache and Handlebars mode for vim
+Plug 'mustache/vim-mustache-handlebars'
 
 call plug#end()
 
