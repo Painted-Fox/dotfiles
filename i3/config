@@ -8,7 +8,7 @@ font pango:Hack, DejaVu Sans Mono 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec urxvtc
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -132,3 +132,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# Autostart
+exec --no-startup-id urxvtd -q -o -m
