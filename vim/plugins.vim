@@ -34,5 +34,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'dag/vim-fish'
 " Mustache and Handlebars mode for vim
 Plug 'mustache/vim-mustache-handlebars'
+" Enhancement's to Vim's C-Sharp Functionality
+Plug 'OrangeT/vim-csharp'
 
 call plug#end()
