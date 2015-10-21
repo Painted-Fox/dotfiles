@@ -135,3 +135,6 @@ bar {
 
 # Autostart
 exec --no-startup-id urxvtd -q -o -m
+
+# Shortcut to lock
+bindsym $mod+Control+l exec i3lock --color=000000 --ignore-empty-password
