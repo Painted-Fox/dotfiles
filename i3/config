@@ -134,7 +134,9 @@ bar {
 }
 
 # Autostart
+# Start the urxvt daemon and start a client when it's ready.
 exec --no-startup-id urxvtd -q -o -m
+exec --no-startup-id ~/lib/dotfiles/bin/i3init_urxvtc.fish
 
 # Shortcut to lock
 bindsym $mod+Control+l exec i3lock --color=000000 --ignore-empty-password
