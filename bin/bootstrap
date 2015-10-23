@@ -3,9 +3,14 @@
 
 import os
 import subprocess
+import sys
 
 home = os.path.expanduser("~")
 dot = os.path.join(home, "lib/dotfiles")
+
+sys.path.append(os.path.join(dot, "lib"))
+
+import bootstrap
 
 dotfilesets = {
     "common": [
@@ -50,55 +55,17 @@ dirsets = {
     ],
 }
 
-# Help Python 2.x be compatible with Python 3.x
-try: input = raw_input
-except NameError: pass
-
-def ensure_link(src, dst):
-    src = os.path.join(dot, src)
-    dst = os.path.join(home, dst)
-
-    if not os.path.islink(dst) and os.path.exists(dst):
-        print("The destination for a symbolic link already exists.")
-        print("Path: {0}".format(dst))
-        choice = input("Would you like to overwrite it? (Y/n): ")
-        if choice == 'Y' or choice == 'y':
-            if os.path.isdir(dst):
-                os.rmdir(dst)
-            else:
-                os.remove(dst)
-
-    if not os.path.islink(dst) and not os.path.exists(dst):
-        os.symlink(src, dst)
-
-
-def ensure_dir(path):
-    path = os.path.join(home, path)
-
-    if not os.path.isdir(path):
-        os.makedirs(path)
-
-
-def link_set(dotfileset):
-    for item in dotfileset:
-        ensure_link(item[0], item[1])
-
-
-def create_dir_set(dirset):
-    for item in dirset:
-        ensure_dir(item)
-
 
 if __name__ == "__main__":
     print("prerequisites: python git hg dulwich")
 
-    create_dir_set(dirsets["common"])
+    bootstrap.create_dir_set(dirsets["common"])
     if os.name == "posix":
-        create_dir_set(dirsets["unix"])
+        bootstrap.create_dir_set(dirsets["unix"])
     elif os.name == "nt":
-        create_dir_set(dirsets["windows"])
+        bootstrap.create_dir_set(dirsets["windows"])
 
-    ensure_link("mercurial/hgrc", ".hgrc")
+    bootstrap.ensure_link(dot, "mercurial/hgrc", ".hgrc")
 
     hg_git_dst = os.path.join(home, "lib/hg/hg-git")
     if not os.path.isdir(hg_git_dst):
@@ -112,10 +79,10 @@ if __name__ == "__main__":
             hg_git_dst,
         ])
 
-    link_set(dotfilesets["common"])
+    bootstrap.link_set(dot, dotfilesets["common"])
     if os.name == "posix":
-        link_set(dotfilesets["unix"])
+        bootstrap.link_set(dot, dotfilesets["unix"])
     elif os.name == "nt":
-        link_set(dotfilesets["windows"])
+        bootstrap.link_set(dot, dotfilesets["windows"])
 
     print("Completed")
