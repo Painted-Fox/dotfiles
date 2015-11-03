@@ -139,6 +139,11 @@ exec --no-startup-id urxvtd -q -o -m
 exec --no-startup-id ~/lib/dotfiles/bin/i3init_urxvtc.fish
 # Start the NetworkManager applet
 exec --no-startup-id nm-applet
+# Start the volume control applet
+exec --no-startup-id mate-volume-control-applet
+# Start the Redshift
+exec --no-startup-id gtk-redshift
+
 
 # Shortcut to lock
 bindsym $mod+Control+l exec i3lock --color=000000 --ignore-empty-password
