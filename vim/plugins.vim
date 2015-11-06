@@ -12,6 +12,11 @@ Plug 'bling/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 " A dark color scheme for Vim & gVim
 Plug 'w0ng/vim-hybrid'
+" NERDTree is a tree explorer for vim.
+Plug 'scrooloose/nerdtree'
+" NERDTree and tabs together in Vim, painlessly
+Plug 'jistr/vim-nerdtree-tabs'
+
 
 " Writing tools --------------------------------------------------------------
 
@@ -27,6 +32,7 @@ Plug 'reedes/vim-pencil'
 Plug 'editorconfig/editorconfig-vim'
 " fugitive.vim: a Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
+
 
 " Language specific ----------------------------------------------------------
 
