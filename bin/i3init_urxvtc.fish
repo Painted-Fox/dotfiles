@@ -5,7 +5,7 @@ set -l hostname (hostname)
 for i in (seq 5)
     if test -S ~/.urxvt/urxvtd-$hostname
         # The socket exists.
-        i3-msg 'exec urxvtc -e sh -c \'tmux attach || tmux\''
+        i3-msg 'exec urxvtc'
         break
     else
         # Wait 1 second.
