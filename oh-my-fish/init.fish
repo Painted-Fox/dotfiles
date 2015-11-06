@@ -1,6 +1,3 @@
-# Turn off the fish greeting.
-set -g -x fish_greeting ''
-
 # Shortcuts to edit config files
 function dot; pushd ~/lib/dotfiles; end
 function eb;  dot; vim bin/bootstrap;           popd; end
@@ -15,5 +12,3 @@ function evc; dot; vim vim/plugins.config.vim;  popd; end
 
 # Don't autoconnect on start
 alias tf "tf -n"
-
-source ~/lib/dotfiles/fish/mark.fish
