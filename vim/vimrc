@@ -87,8 +87,22 @@ endif
 
 
 " Mappings -------------------------------------------------------------------
-inoremap jk <ESC>
+
 " Fix spelling with <leader>f
 nnoremap <leader>f 1z=
 " Toggle spelling visuals with <leader>s
 nnoremap <leader>s :set spell!<CR>
+
+
+" Nav between open buffers
+" Ctrl+n for next buffer
+" Ctrl+p for prev buffer
+map <C-n> :bnext<CR>
+map <C-p> :bprev<CR>
+
+" Easier panel nav
+" Ctrl+j, Ctrl+k, Ctrl+h, Ctrl+l to move between panels
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
