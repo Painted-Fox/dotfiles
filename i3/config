@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Use the Hack font.  Fall back on the default DejaVu font.
-font pango:Hack, DejaVu Sans Mono 11
+font pango:Hack, Source Code Pro, DejaVu Sans Mono 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
