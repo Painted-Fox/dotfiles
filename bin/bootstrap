@@ -34,6 +34,8 @@ dotfilesets = {
         ("tmux/tmux.conf",               ".tmux.conf"),
         ("w3m/config",                   ".w3m/config"),
         ("Xresources",                   ".Xresources"),
+        ("vim",                          ".nvim"),
+        ("vim/vimrc",                    ".nvimrc"),
     ],
     "windows": [
         ("vim",                          "vimfiles"),
