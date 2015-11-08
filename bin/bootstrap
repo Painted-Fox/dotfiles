@@ -48,6 +48,7 @@ dirsets = {
     ],
     "unix": [
         ".config/fish",
+        ".config/omf",
         ".config/i3",
         ".config/i3status",
         ".marks",
