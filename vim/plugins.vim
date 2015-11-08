@@ -42,5 +42,7 @@ Plug 'dag/vim-fish'
 Plug 'mustache/vim-mustache-handlebars'
 " Enhancement's to Vim's C-Sharp Functionality
 Plug 'OrangeT/vim-csharp'
+" Support from writing Nix expressions in vim
+Plug 'LnL7/vim-nix'
 
 call plug#end()
