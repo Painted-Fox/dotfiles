@@ -135,7 +135,6 @@ bar {
 
 # Autostart
 # Start the urxvt daemon and start a client when it's ready.
-exec --no-startup-id urxvtd -q -o -m
 exec --no-startup-id ~/lib/dotfiles/bin/i3init_urxvtc.fish
 # Start the NetworkManager applet
 exec --no-startup-id nm-applet
