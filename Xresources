@@ -36,8 +36,8 @@ Xcursor.theme:    Vanilla-DMZ-AA
 
 !urxvt fonts:
 
-URxvt*font: xft:Hack:size=13
-URxvt*boldFont: xft:Hack:bold:size=13
+URxvt*font: xft:Sauce\ Code\ Powerline:size=13
+URxvt*boldFont: xft:Sauce\ Code\ Powerline:bold:size=13
 
 
 !urxvt extensions:
