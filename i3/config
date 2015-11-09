@@ -1,6 +1,9 @@
 # Set the mod key to the "Windows" key.
 set $mod Mod4
 
+# Set $tmux to exectue a urxvt client that runs tmux.
+set $tmux exec urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
+
 # Use the Hack font.  Fall back on the default DejaVu font.
 font pango:Sauce Code Powerline, DejaVu Sans Mono 11
 
@@ -8,7 +11,7 @@ font pango:Sauce Code Powerline, DejaVu Sans Mono 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc -e fish
+bindsym $mod+Return $tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -134,8 +137,8 @@ bar {
 }
 
 # Autostart
-# Start the urxvt daemon and start a client when it's ready.
-exec --no-startup-id ~/lib/dotfiles/bin/i3init_urxvtc.fish
+# Start a terminal
+exec --no-startup-id $tmux
 # Start the NetworkManager applet
 exec --no-startup-id nm-applet
 # Start the volume control applet
