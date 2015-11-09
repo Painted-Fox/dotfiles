@@ -143,9 +143,6 @@ exec --no-startup-id $tmux
 exec --no-startup-id nm-applet
 # Start the volume control applet
 exec --no-startup-id volumeicon
-# Start the Redshift
-exec --no-startup-id redshift
-
 
 # Shortcut to lock
 bindsym $mod+Control+l exec i3lock --color=000000 --ignore-empty-password
