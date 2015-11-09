@@ -8,7 +8,7 @@ font pango:Sauce Code Powerline, DejaVu Sans Mono 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec urxvtc -e fish
 
 # kill focused window
 bindsym $mod+Shift+q kill

@@ -1,6 +1,0 @@
-PATH         DEFAULT=${GOPATH}/bin:${HOME}/bin:${HOME}/lib/secrets/bin:${HOME}/lib/dotfiles/bin:${PATH}
-EDITOR       DEFAULT=/usr/bin/vim
-GOPATH       DEFAULT=${HOME}/src/gocode
-WORKON_HOME  DEFAULT=${HOME}/.virtualenvs
-PROJECT_HOME DEFAULT=${HOME}/src
-MOSH_PREDICTION_DISPLAY DEFAULT=never

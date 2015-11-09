@@ -22,7 +22,6 @@ dotfilesets = {
         ("vim/vimrc",                    ".vimrc"),
     ],
     "unix": [
-        ("environment/pam_environment",  ".pam_environment"),
         ("environment/profile",          ".profile"),
         ("bash/bashrc",                  ".bashrc"),
         ("bash/bash_aliases",            ".bash_aliases"),
