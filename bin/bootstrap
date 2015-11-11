@@ -49,11 +49,12 @@ dirsets = {
     ],
     "unix": [
         ".config/fish",
-        ".config/omf",
         ".config/i3",
         ".config/i3status",
+        ".config/omf",
         ".marks",
         ".w3m",
+        "bin",
     ],
     "windows": [
     ],
