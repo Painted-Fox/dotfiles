@@ -11,7 +11,10 @@ font pango:Sauce Code Powerline, DejaVu Sans Mono 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return $tmux
+bindsym $mod+Return exec urxvtc -e fish
+
+# enter tmux session
+bindsym $mod+t $tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -142,3 +145,15 @@ exec --no-startup-id $tmux
 
 # Shortcut to lock
 bindsym $mod+Control+l exec i3lock --color=000000 --ignore-empty-password
+
+# To create a window for asciinema recordings:
+#   $mod+Return for a new urxvt window
+#   $mod+Shift+Space to make it floating
+# This will ensure the size is perfect:
+floating_minimum_size 1210 x 740
+
+# Scratchpad: move current window to scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
