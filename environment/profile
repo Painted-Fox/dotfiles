@@ -8,9 +8,9 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# If polipo is installed locally, use it.
+# If polipo is running, use it.
 # This speeds up w3m, since it has not cache of its own.
-if type -p "polipo" > /dev/null; then
+if pgrep polipo > /dev/null; then
     export HTTP_PROXY=http://127.0.0.1:8123/
 fi
 
