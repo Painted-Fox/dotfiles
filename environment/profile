@@ -22,8 +22,8 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# Install oh-my-fish under ~/lib
-export OMF_PATH=~/lib/omf
+# Install oh-my-fish under ~/lib/omf
+export OMF_PATH=$HOME/lib/omf
 
 # Set vim as my default editor
 export EDITOR=vim

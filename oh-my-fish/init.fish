@@ -12,3 +12,9 @@ function evc; dot; vim vim/plugins.config.vim;  popd; end
 
 # Don't autoconnect on start
 alias tf "tf -n"
+
+# Install oh-my-fish under ~/lib/omf
+set -x OMF_PATH $HOME/lib/omf
+
+# Set vim as my default editor
+set -x EDITOR vim
