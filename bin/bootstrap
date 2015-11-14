@@ -20,6 +20,7 @@ dotfilesets = {
         ("minttyrc",                     ".minttyrc"),
         ("vim",                          ".vim"),
         ("vim/vimrc",                    ".vimrc"),
+        ("vimperatorrc",                 ".vimperatorrc"),
     ],
     "unix": [
         ("environment/profile",          ".profile"),
