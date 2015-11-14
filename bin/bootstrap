@@ -29,6 +29,7 @@ dotfilesets = {
         ("oh-my-fish/bundle",            ".config/omf/bundle"),
         ("oh-my-fish/theme",             ".config/omf/theme"),
         ("oh-my-fish/init.fish",         ".config/omf/init.fish"),
+        ("dircolors",                    ".dircolors"),
         ("i3/config",                    ".config/i3/config"),
         ("i3/i3status.conf",             ".config/i3status/config"),
         ("tmux/tmux.conf",               ".tmux.conf"),

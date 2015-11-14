@@ -16,6 +16,23 @@ function evc; dot; vim vim/plugins.config.vim;  popd; end
 alias tf "tf -n"
 
 
+# Load Dircolors -------------------------------------------------------------
+#
+# This loads dircolors specified in ~/.dircolors
+#
+# You can create a ~/.dircolors file with the command:
+#   dircolors --print-database > ~/.dircolors
+#
+# This code is inspired by https://github.com/fish-shell/fish-shell
+#   fish-shell/share/functions/ls.fish
+
+if type -q -f dircolors
+    set -l colorfile ~/.dircolors
+    if test -f $colorfile
+        eval (dircolors -c $colorfile | sed 's/>&\/dev\/null$//')
+    end
+end
+
 # Environment Variables ------------------------------------------------------
 
 # Install oh-my-fish under ~/lib/omf
