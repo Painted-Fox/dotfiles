@@ -27,6 +27,7 @@ let g:pencil#joinspaces = 1             " Use two spaces after a period
 augroup pencil
     autocmd!
     autocmd FileType markdown call pencil#init()
+    autocmd FileType text     call pencil#init()
 augroup END
 
 
