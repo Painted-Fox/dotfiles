@@ -1,7 +1,0 @@
-"3.10.1 (created: 2015/08/25 00:41:59)
-
-highlight Hint font-family: monospace; font-size: 10pt; font-weight: bold; text-transform: uppercase; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px; 
-set hintchars=hjklasdfgyuiopqwertnmzxcvb
-source! ~/lib/dotfiles/vimperatorrc.local
-
-" vim: set ft=vimperator:
