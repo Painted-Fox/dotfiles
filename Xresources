@@ -29,6 +29,9 @@
 *color7: #707880
 *color15: #C5C8C6
 
+! Turn off cursor blinking
+URxvt.cursorBlink: 0
+
 !Theme taken from:
 !http://crunchbang.org/forums/viewtopic.php?id=9935
 
