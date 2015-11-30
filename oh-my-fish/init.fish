@@ -47,3 +47,6 @@ if pgrep polipo > /dev/null
     set -x HTTP_PROXY http://127.0.0.1:8123/
 end
 
+# Add completion for pass (passwordstore.org)
+# http://git.zx2c4.com/password-store/plain/src/completion/pass.fish-completion
+source $HOME/lib/dotfiles/fish/pass.fish-completion
