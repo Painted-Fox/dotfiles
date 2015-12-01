@@ -74,6 +74,9 @@ if has('gui_running')
 
     set lines=60      " Set height in lines
     set columns=190   " Set width in columns
+
+    set guicursor+=a:blinkon0 " Disable all blinking
+
     if has('gui_win32')
         set guifont=Hack:h14:cANSI
     else
