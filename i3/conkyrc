@@ -50,7 +50,7 @@ TEXT
         "color": ${if_match ${battery_short}>15}"\#C5C8C6"${else}"\#CC6666"${endif}
     },
     {
-        "full_text": "CPU ${cpu cpu0}%",
+        "full_text": ${if_match ${cpu cpu0}<10}"CPU  ${cpu cpu0}%"${else}"CPU ${cpu cpu0}%"${endif},
         "color": ${if_match ${cpu cpu0}<90}"\#C5C8C6"${else}"\#CC6666"${endif}
     },
     {
