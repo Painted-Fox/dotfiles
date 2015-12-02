@@ -51,7 +51,7 @@ TEXT
     },
     {
         "full_text": "CPU ${cpu cpu0}%",
-        "color": "\#CC6666"
+        "color": ${if_match ${cpu cpu0}<90}"\#C5C8C6"${else}"\#CC6666"${endif}
     },
     {
         "full_text": "RAM ${memperc}%",
