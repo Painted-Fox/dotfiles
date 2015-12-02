@@ -39,7 +39,7 @@ TEXT
 [
     {
         "full_text": ${if_existing /proc/sys/net/ipv4/conf/tun0}"VPN: on"${else}"VPN: off"${endif},
-        "color": ${if_match /proc/sys/net/ipv4/conf/tun0}"\#B5BD68"${else}"\#C5C8C6"${endif}
+        "color": ${if_existing /proc/sys/net/ipv4/conf/tun0}"\#B5BD68"${else}"\#C5C8C6"${endif}
     },
     {
         "full_text": "${addr enp0s3}",
