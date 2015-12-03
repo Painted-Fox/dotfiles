@@ -29,48 +29,48 @@ override_utf8_locale no
 
 # number of cpu samples to average
 # set to 1 to disable averaging
-cpu_avg_samples 2
+cpu_avg_samples 3
 
 # Stuff after 'TEXT' will be formatted on screen
 TEXT
 
-# JSON for i3bar
+# VPN
+[{  "full_text": ${if_existing /proc/sys/net/ipv4/conf/tun0}"VPN on"${else}"VPN off"${endif},
+    "short_text": ${if_existing /proc/sys/net/ipv4/conf/tun0}"V on"${else}"V off"${endif},
+    "color": ${if_existing /proc/sys/net/ipv4/conf/tun0}"\#B5BD68"${else}"\#C5C8C6"${endif} },
 
-[
-    {
-        "full_text": ${if_existing /proc/sys/net/ipv4/conf/tun0}"VPN: on"${else}"VPN: off"${endif},
-        "color": ${if_existing /proc/sys/net/ipv4/conf/tun0}"\#B5BD68"${else}"\#C5C8C6"${endif}
-    },
-    {
-        "full_text": "${addr enp0s3}",
-        "color": "\#C5C8C6"
-    },
-    {
-        "full_text": "BAT ${battery_short}",
-        "color": ${if_match ${battery_short}>15}"\#C5C8C6"${else}"\#CC6666"${endif}
-    },
-    {
-        "full_text": ${if_match ${cpu cpu0}<10}"CPU  ${cpu cpu0}%"${else}"CPU ${cpu cpu0}%"${endif},
-        "color": ${if_match ${cpu cpu0}<90}"\#C5C8C6"${else}"\#CC6666"${endif}
-    },
-    {
-        "full_text": "RAM ${memperc}%",
-        "color": ${if_match ${memperc}<90}"\#C5C8C6"${else}"\#CC6666"${endif}
-    },
-    {
-        "full_text": "${fs_free /} Free",
-        "color": "\#C5C8C6"
-    },
-    {
-        "full_text": "♪: ${mixer}",
-        "color": "\#C5C8C6"
-    },
-    {
-        "full_text": "${time %a, %b %d}",
-        "color": "\#C5C8C6"
-    },
-    {
-        "full_text": "${time %I:%M %p}",
-        "color": "\#C5C8C6"
-    }
-],
+# Wired network
+{   "full_text": "${addr eth0}",
+    "color": "\#C5C8C6" },
+
+# Battery
+{   "full_text": "BAT ${battery_short}",
+    "color": ${if_match ${battery_short}>15}"\#C5C8C6"${else}"\#CC6666"${endif} },
+
+# CPU
+{   "full_text": ${if_match ${cpu cpu0}<10}"CPU  ${cpu cpu0}%"${else}"CPU ${cpu cpu0}%"${endif},
+    "short_text": ${if_match ${cpu cpu0}<10}"C  ${cpu cpu0}%"${else}"C ${cpu cpu0}%"${endif},
+    "color": ${if_match ${cpu cpu0}<90}"\#C5C8C6"${else}"\#CC6666"${endif} },
+
+# RAM
+{   "full_text": ${if_match ${memperc}<10}"RAM  ${memperc}%"${else}"RAM ${memperc}%"${endif},
+    "short_text": ${if_match ${memperc}<10}"R  ${memperc}%"${else}"R ${memperc}%"${endif},
+    "color": ${if_match ${memperc}<90}"\#C5C8C6"${else}"\#CC6666"${endif} },
+
+# Disk free
+{   "full_text": "${fs_free /} Free",
+    "short_text": "${fs_free /}",
+    "color": "\#C5C8C6" },
+
+# Volume
+{   "full_text": "♪ ${mixer}",
+    "color": "\#C5C8C6" },
+
+# Date
+{   "full_text": "${time %a, %b %d}",
+    "short_text": "${time %b %d}",
+    "color": "\#C5C8C6" },
+
+# Time
+{   "full_text": "${time %I:%M %p}",
+    "color": "\#C5C8C6" }],
