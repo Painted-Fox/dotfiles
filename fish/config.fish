@@ -1,4 +1,5 @@
-# Aliases / Shortcuts --------------------------------------------------------
+# Turn off the fish greeting.
+set -g -x fish_greeting ''
 
 # Shortcuts to edit config files
 function dot; pushd ~/lib/dotfiles; end
@@ -33,10 +34,8 @@ if type -q -f dircolors
     end
 end
 
-# Environment Variables ------------------------------------------------------
 
-# Install oh-my-fish under ~/lib/omf
-set -x OMF_PATH $HOME/lib/omf
+# Environment Variables ------------------------------------------------------
 
 # Set vim as my default editor
 set -x EDITOR vim
@@ -47,6 +46,13 @@ if pgrep polipo > /dev/null
     set -x HTTP_PROXY http://127.0.0.1:8123/
 end
 
+
+# Load Scripts ---------------------------------------------------------------
+
 # Add completion for pass (passwordstore.org)
 # http://git.zx2c4.com/password-store/plain/src/completion/pass.fish-completion
 source $HOME/lib/dotfiles/fish/pass.fish-completion
+
+# Commands for quick navigation of the filesystem.
+# Idea from: http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
+source ~/lib/dotfiles/fish/mark.fish
